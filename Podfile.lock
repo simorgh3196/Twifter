@@ -1,12 +1,21 @@
 PODS:
-  - OAuthSwift (1.0.0)
+  - APIKit (3.1.1):
+    - Result (~> 3.0)
+  - Nimble (5.1.1)
+  - Quick (1.0.0)
+  - Result (3.1.0)
 
 DEPENDENCIES:
-  - OAuthSwift (~> 1.0.0)
+  - APIKit (= 3.1.1)
+  - Nimble (= 5.1.1)
+  - Quick (= 1.0.0)
 
 SPEC CHECKSUMS:
-  OAuthSwift: dd4f502ffd4f6e122b861b5e4529bf6454a30fe6
+  APIKit: 7460983f490d3bde6aaaaa4164d18c9865a6f91d
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
 
-PODFILE CHECKSUM: 726f236346cdbeb8cb12819c50a82d7c67ddb761
+PODFILE CHECKSUM: b305b1177eb06af045ff616085d3ffee8eee0e61
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.1

@@ -3,10 +3,12 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Twifter' do
-  pod 'OAuthSwift', '~> 1.0.0'
+  pod 'APIKit', '3.1.1'
 
   target 'TwifterTests' do
     inherit! :search_paths
+    pod 'Quick', '1.0.0'
+    pod 'Nimble', '5.1.1'
   end
 
 end
