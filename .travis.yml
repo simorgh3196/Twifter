@@ -1,5 +1,7 @@
 language: objective-c
 osx_image: xcode8.1
+xcode_workspace: Twifter.xcworkspace
+xcode_scheme: Twifter
 
 before_install:
     - gem install xcpretty
