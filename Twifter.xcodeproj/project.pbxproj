@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AB93600F9346E83F81E6E8B /* Pods_TwifterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0F9B67642551C6E489902D /* Pods_TwifterTests.framework */; };
+		60AEF0486F869F4D87E73806 /* Pods_Twifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2DA813E67F6CEAA35C8270 /* Pods_Twifter.framework */; };
 		F880135D1DC48206008E8FBD /* Twifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88013531DC48206008E8FBD /* Twifter.framework */; };
 		F88013621DC48206008E8FBD /* TwifterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88013611DC48206008E8FBD /* TwifterTests.swift */; };
 		F88013641DC48206008E8FBD /* Twifter.h in Headers */ = {isa = PBXBuildFile; fileRef = F88013561DC48206008E8FBD /* Twifter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160F18B90CE65E30D09017FF /* Pods-TwifterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwifterTests/Pods-TwifterTests.release.xcconfig"; sourceTree = "<group>"; };
+		61083B826093B6C69458534A /* Pods-TwifterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwifterTests/Pods-TwifterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F2DA813E67F6CEAA35C8270 /* Pods_Twifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A406D9943DCD3ABF6EA7CAAF /* Pods-Twifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twifter/Pods-Twifter.debug.xcconfig"; sourceTree = "<group>"; };
 		F88013531DC48206008E8FBD /* Twifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Twifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88013561DC48206008E8FBD /* Twifter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twifter.h; sourceTree = "<group>"; };
 		F88013571DC48206008E8FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +37,8 @@
 		F88013611DC48206008E8FBD /* TwifterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwifterTests.swift; sourceTree = "<group>"; };
 		F88013631DC48206008E8FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F880136D1DC482E0008E8FBD /* Twifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twifter.swift; sourceTree = "<group>"; };
+		FA0F9B67642551C6E489902D /* Pods_TwifterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwifterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE701BE11EBE456ABEEEB97 /* Pods-Twifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twifter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twifter/Pods-Twifter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60AEF0486F869F4D87E73806 /* Pods_Twifter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,18 +55,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				F880135D1DC48206008E8FBD /* Twifter.framework in Frameworks */,
+				1AB93600F9346E83F81E6E8B /* Pods_TwifterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D81A9671E8FCF7821BBEDB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A406D9943DCD3ABF6EA7CAAF /* Pods-Twifter.debug.xcconfig */,
+				FBE701BE11EBE456ABEEEB97 /* Pods-Twifter.release.xcconfig */,
+				61083B826093B6C69458534A /* Pods-TwifterTests.debug.xcconfig */,
+				160F18B90CE65E30D09017FF /* Pods-TwifterTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBDF32C3CFB6911CE7E4127A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F2DA813E67F6CEAA35C8270 /* Pods_Twifter.framework */,
+				FA0F9B67642551C6E489902D /* Pods_TwifterTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F88013491DC48206008E8FBD = {
 			isa = PBXGroup;
 			children = (
 				F88013551DC48206008E8FBD /* Twifter */,
 				F88013601DC48206008E8FBD /* TwifterTests */,
 				F88013541DC48206008E8FBD /* Products */,
+				4D81A9671E8FCF7821BBEDB7 /* Pods */,
+				CBDF32C3CFB6911CE7E4127A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,10 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F88013671DC48206008E8FBD /* Build configuration list for PBXNativeTarget "Twifter" */;
 			buildPhases = (
+				581BF4EAC3F8FBE205844BD1 /* [CP] Check Pods Manifest.lock */,
 				F880134E1DC48206008E8FBD /* Sources */,
 				F880134F1DC48206008E8FBD /* Frameworks */,
 				F88013501DC48206008E8FBD /* Headers */,
 				F88013511DC48206008E8FBD /* Resources */,
+				314FF2D1105DC1B7C7322610 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F880136A1DC48206008E8FBD /* Build configuration list for PBXNativeTarget "TwifterTests" */;
 			buildPhases = (
+				15864EBCA9803C8372C2BACF /* [CP] Check Pods Manifest.lock */,
 				F88013581DC48206008E8FBD /* Sources */,
 				F88013591DC48206008E8FBD /* Frameworks */,
 				F880135A1DC48206008E8FBD /* Resources */,
+				1A03F771799F209E781C790C /* [CP] Embed Pods Frameworks */,
+				0F2CB90071F3B0DCCD7F0E4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +231,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F2CB90071F3B0DCCD7F0E4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwifterTests/Pods-TwifterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15864EBCA9803C8372C2BACF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1A03F771799F209E781C790C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwifterTests/Pods-TwifterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		314FF2D1105DC1B7C7322610 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twifter/Pods-Twifter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		581BF4EAC3F8FBE205844BD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F880134E1DC48206008E8FBD /* Sources */ = {
@@ -326,6 +441,7 @@
 		};
 		F88013681DC48206008E8FBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A406D9943DCD3ABF6EA7CAAF /* Pods-Twifter.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -349,6 +465,7 @@
 		};
 		F88013691DC48206008E8FBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBE701BE11EBE456ABEEEB97 /* Pods-Twifter.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -370,6 +487,7 @@
 		};
 		F880136B1DC48206008E8FBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61083B826093B6C69458534A /* Pods-TwifterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -384,6 +502,7 @@
 		};
 		F880136C1DC48206008E8FBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 160F18B90CE65E30D09017FF /* Pods-TwifterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

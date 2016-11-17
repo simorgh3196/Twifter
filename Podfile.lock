@@ -1,0 +1,18 @@
+PODS:
+  - Nimble (3.0.0)
+  - OAuthSwift (1.0.0)
+  - Quick (0.9.3)
+
+DEPENDENCIES:
+  - Nimble (= 3.0.0)
+  - OAuthSwift (~> 1.0.0)
+  - Quick (~> 0.9.0)
+
+SPEC CHECKSUMS:
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  OAuthSwift: dd4f502ffd4f6e122b861b5e4529bf6454a30fe6
+  Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
+
+PODFILE CHECKSUM: 1a7f749552cee030d9b2d5fb600b70e452edad68
+
+COCOAPODS: 1.1.1

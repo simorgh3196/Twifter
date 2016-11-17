@@ -1,11 +1,13 @@
 language: objective-c
 osx_image: xcode8.1
-xcode_workspace: Twifter.xcodeproj
-xcode_scheme: Twifter
-xcode_sdk: iphonesimulator10.1
 
 before_install:
     - gem install xcpretty
+
 script:
-    - set -o pipefail  # required to let xcpretty use the same exit code like xcodebuild
-    - xcodebuild test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" -project Twifter.xcodeproj -scheme "Twifter" -destination name="iPhone 6s" | xcpretty -c
+    - pod lib lint
+    - rake "build[build, Twifter, iphonesimulator, name=iPhone 6s]"
+    - rake "build[test, Twifter, iphonesimulator, name=iPhone 6s]"
+
+notifications:
+    email: false
