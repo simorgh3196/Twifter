@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B51F10DD55A887E89C41A4EB03CF523E"
+               BuildableName = "Pods_Twifter.framework"
+               BlueprintName = "Pods-Twifter"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8AC5CA11A5E7C3170E85D458DE15ED94"
                BuildableName = "OAuthSwift.framework"
                BlueprintName = "OAuthSwift"
