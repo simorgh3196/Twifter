@@ -14,20 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F88013521DC48206008E8FBD"
-               BuildableName = "Twifter.framework"
-               BlueprintName = "Twifter"
-               ReferencedContainer = "container:Twifter.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B51F10DD55A887E89C41A4EB03CF523E"
                BuildableName = "Pods_Twifter.framework"
                BlueprintName = "Pods-Twifter"
@@ -46,6 +32,20 @@
                BuildableName = "OAuthSwift.framework"
                BlueprintName = "OAuthSwift"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F88013521DC48206008E8FBD"
+               BuildableName = "Twifter.framework"
+               BlueprintName = "Twifter"
+               ReferencedContainer = "container:Twifter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
