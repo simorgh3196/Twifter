@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		61147AC41F540931E153F484 /* Pods_Twifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8606F13D6727B1E03C5666D9 /* Pods_Twifter.framework */; };
 		F2CCEC0D403A947BC7D9F4DB /* Pods_TwifterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACBB3AE975E3B41FF46B268 /* Pods_TwifterTests.framework */; };
+		F825F3CE1E28DA5C00F597CC /* QueryStringDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F825F3CD1E28DA5C00F597CC /* QueryStringDataParser.swift */; };
 		F880135D1DC48206008E8FBD /* Twifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88013531DC48206008E8FBD /* Twifter.framework */; };
 		F88013621DC48206008E8FBD /* TwifterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88013611DC48206008E8FBD /* TwifterTests.swift */; };
 		F88013641DC48206008E8FBD /* Twifter.h in Headers */ = {isa = PBXBuildFile; fileRef = F88013561DC48206008E8FBD /* Twifter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,7 +22,7 @@
 		F8D5649F1E168F9C008CEA73 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5649E1E168F9C008CEA73 /* HMAC.swift */; };
 		F8D564A11E168FD6008CEA73 /* Data+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564A01E168FD6008CEA73 /* Data+OAuthSwift.swift */; };
 		F8D564A31E1690FB008CEA73 /* Collection+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564A21E1690FB008CEA73 /* Collection+OAuthSwift.swift */; };
-		F8D564A51E16A602008CEA73 /* String+URLEncode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564A41E16A602008CEA73 /* String+URLEncode.swift */; };
+		F8D564A51E16A602008CEA73 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564A41E16A602008CEA73 /* String+.swift */; };
 		F8D564A71E16A68C008CEA73 /* TwifterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564A61E16A68C008CEA73 /* TwifterRequest.swift */; };
 		F8D564A91E17981A008CEA73 /* Int+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564A81E17981A008CEA73 /* Int+OAuthSwift.swift */; };
 		F8E7FE691DD0EB2900451D92 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7FE561DD0EB2900451D92 /* Account.swift */; };
@@ -62,6 +63,7 @@
 		A8B5F066C125120A0DE0C0D6 /* Pods-TwifterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwifterTests/Pods-TwifterTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6608A653E5C1055DFF47419 /* Pods-Twifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twifter/Pods-Twifter.debug.xcconfig"; sourceTree = "<group>"; };
 		E0DD7F6EB0A78C810EEC8AD4 /* Pods-Twifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twifter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twifter/Pods-Twifter.release.xcconfig"; sourceTree = "<group>"; };
+		F825F3CD1E28DA5C00F597CC /* QueryStringDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringDataParser.swift; sourceTree = "<group>"; };
 		F88013531DC48206008E8FBD /* Twifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Twifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88013561DC48206008E8FBD /* Twifter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twifter.h; sourceTree = "<group>"; };
 		F88013571DC48206008E8FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 		F8D5649E1E168F9C008CEA73 /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
 		F8D564A01E168FD6008CEA73 /* Data+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+OAuthSwift.swift"; sourceTree = "<group>"; };
 		F8D564A21E1690FB008CEA73 /* Collection+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+OAuthSwift.swift"; sourceTree = "<group>"; };
-		F8D564A41E16A602008CEA73 /* String+URLEncode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+URLEncode.swift"; sourceTree = "<group>"; };
+		F8D564A41E16A602008CEA73 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		F8D564A61E16A68C008CEA73 /* TwifterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwifterRequest.swift; sourceTree = "<group>"; };
 		F8D564A81E17981A008CEA73 /* Int+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+OAuthSwift.swift"; sourceTree = "<group>"; };
 		F8E7FE561DD0EB2900451D92 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -167,12 +169,12 @@
 			children = (
 				F88013561DC48206008E8FBD /* Twifter.h */,
 				F88013571DC48206008E8FBD /* Info.plist */,
-				F8D564841E129456008CEA73 /* Auth */,
 				F8E7FE551DD0EB2900451D92 /* REST API */,
 				F880136D1DC482E0008E8FBD /* Twifter.swift */,
 				F8D564A61E16A68C008CEA73 /* TwifterRequest.swift */,
 				F8D564941E15F209008CEA73 /* Credential.swift */,
 				F8D564881E12A42F008CEA73 /* TwifterError.swift */,
+				F825F3CD1E28DA5C00F597CC /* QueryStringDataParser.swift */,
 				F8D564961E161DD6008CEA73 /* Extensions */,
 			);
 			path = Twifter;
@@ -187,12 +189,13 @@
 			path = TwifterTests;
 			sourceTree = "<group>";
 		};
-		F8D564841E129456008CEA73 /* Auth */ = {
+		F8D564841E129456008CEA73 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
 				F8D564901E12A585008CEA73 /* OAuthRequest.swift */,
 			);
-			name = Auth;
+			name = OAuth;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F8D564961E161DD6008CEA73 /* Extensions */ = {
@@ -200,7 +203,7 @@
 			children = (
 				F8D564991E168F25008CEA73 /* CommonCrypto */,
 				F8D564971E161DF1008CEA73 /* Dictionary+.swift */,
-				F8D564A41E16A602008CEA73 /* String+URLEncode.swift */,
+				F8D564A41E16A602008CEA73 /* String+.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 		F8E7FE551DD0EB2900451D92 /* REST API */ = {
 			isa = PBXGroup;
 			children = (
+				F8D564841E129456008CEA73 /* OAuth */,
 				F8E7FE561DD0EB2900451D92 /* Account.swift */,
 				F8E7FE571DD0EB2900451D92 /* Application.swift */,
 				F8E7FE581DD0EB2900451D92 /* Blocks.swift */,
@@ -312,7 +316,7 @@
 					F88013521DC48206008E8FBD = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F880135B1DC48206008E8FBD = {
 						CreatedOnToolsVersion = 8.0;
@@ -448,6 +452,7 @@
 				F8E7FE781DD0EB2900451D92 /* Search.swift in Sources */,
 				F8E7FE6D1DD0EB2900451D92 /* DirectMessages.swift in Sources */,
 				F8E7FE711DD0EB2900451D92 /* Friendships.swift in Sources */,
+				F825F3CE1E28DA5C00F597CC /* QueryStringDataParser.swift in Sources */,
 				F8E7FE741DD0EB2900451D92 /* Lists.swift in Sources */,
 				F880136E1DC482E0008E8FBD /* Twifter.swift in Sources */,
 				F8E7FE701DD0EB2900451D92 /* Friends.swift in Sources */,
@@ -461,7 +466,7 @@
 				F8D564981E161DF1008CEA73 /* Dictionary+.swift in Sources */,
 				F8D564A11E168FD6008CEA73 /* Data+OAuthSwift.swift in Sources */,
 				F8E7FE791DD0EB2900451D92 /* Statuses.swift in Sources */,
-				F8D564A51E16A602008CEA73 /* String+URLEncode.swift in Sources */,
+				F8D564A51E16A602008CEA73 /* String+.swift in Sources */,
 				F8E7FE761DD0EB2900451D92 /* Projects.swift in Sources */,
 				F8D564911E12A585008CEA73 /* OAuthRequest.swift in Sources */,
 				F8D564A31E1690FB008CEA73 /* Collection+OAuthSwift.swift in Sources */,
@@ -533,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -581,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -606,9 +611,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Twifter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.simorgh.Twifter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simorgh3196.Twifter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -629,9 +634,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Twifter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.simorgh.Twifter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simorgh3196.Twifter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

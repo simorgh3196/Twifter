@@ -18,4 +18,20 @@ extension String {
         return addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!
     }
 
+    func queryItems() -> [String: String]? {
+        var components = URLComponents()
+        components.percentEncodedQuery = self
+
+        var queryItems = [String: String]()
+        components.queryItems?.forEach { item in
+            queryItems[item.name] = item.value
+        }
+
+        if queryItems.isEmpty {
+            return nil
+        }
+
+        return queryItems
+    }
+
 }

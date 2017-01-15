@@ -19,22 +19,10 @@ extension OAuthRequest {
     }
 
     public var dataParser: DataParser {
-        return FormURLEncodedDataParser(encoding: .utf8)
+        return QueryStringDataParser()
     }
 
 }
-
-
-/**
- send FetchOAuthRequestToken
-   -> oauth_token(request_token), oauth_token_secret
-
- openURL https://api.twitter.com/oauth/authenticate?oauth_token=[oauth_token(request_token)]
-   -> oauth_token, oauth_verifier
-
- send FetchOAuthAccessToken with [oauth_verifier]
-   -> oauth_token, oauth_token_secret
- */
 
 
 public struct FetchOAuthRequestToken: OAuthRequest {
@@ -48,13 +36,15 @@ public struct FetchOAuthRequestToken: OAuthRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        guard let tokenDic = object as? [String: Any] else {
+        guard let queries = object as? [String: String] else {
             throw TwifterError.invalidResponseData
         }
-        guard let requestToken = Credential.AccessToken(queries: tokenDic) else {
+
+        guard let requestToken = Credential.AccessToken(queries: queries) else {
             throw TwifterError.parseFailed
         }
-        let url = URL(string: "https://api.twitter.com/oauth/authenticate?oauth_token=\(requestToken.token)")!
+        let url = URL(string: "/oauth/authenticate?oauth_token=\(requestToken.token)", relativeTo: baseURL)!
+
         return (requestToken, url)
     }
 
@@ -68,14 +58,20 @@ public struct FetchOAuthAccessToken: OAuthRequest {
     public typealias Response = Credential.AccessToken
 
     public var additionalHeaderFields: [String: String]? {
-        return ["oauth_verifier": verifier]
+        return [
+            "oauth_token": credential.accessToken!.token,
+            "oauth_verifier": verifier
+        ]
     }
 
     public var queryParameters: [String : Any]? {
-        return ["oauth_verifier": verifier]
+        return [
+            "oauth_token": credential.accessToken!.token,
+            "oauth_verifier": verifier
+        ]
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Credential.AccessToken {
         guard let tokenDic = object as? [String: Any] else {
             throw TwifterError.invalidResponseData
         }

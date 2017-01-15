@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B51F10DD55A887E89C41A4EB03CF523E"
+               BlueprintIdentifier = "7CAD52CA6E28E3E9005C998B12B46C7F"
                BuildableName = "Pods_Twifter.framework"
                BlueprintName = "Pods-Twifter"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

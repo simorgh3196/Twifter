@@ -8,11 +8,10 @@
 
 import Accounts
 
-
 public class Credential {
 
     public struct ConsumerToken {
-        public var key: String
+        public var token: String
         public var secret: String
     }
 
@@ -41,9 +40,16 @@ public class Credential {
     internal(set) var accessToken: AccessToken?
     internal(set) var account: ACAccount?
 
-    var signingKey: Data {
-        let keyString = "\(accessToken!.secret.urlEncoded())&\(Credential.consumerToken.secret.urlEncoded())"
-        return keyString.data(using: .utf8)!
+
+    init() {
+    }
+
+    public init(accessToken: AccessToken) {
+        self.accessToken = accessToken
+    }
+
+    public init(acAccount account: ACAccount) {
+        self.account = account
     }
 
 
@@ -53,16 +59,8 @@ public class Credential {
      - parameter key:    Twitter consumer key.
      - parameter secret: Twitter consumer secret.
      */
-    public static func registerConsumerToken(key: String, secret: String) {
-        self.consumerToken = ConsumerToken(key: key, secret: secret)
-    }
-
-    public init(accessToken: AccessToken) {
-        self.accessToken = accessToken
-    }
-
-    public init(acAccount account: ACAccount) {
-        self.account = account
+    public static func registerConsumerToken(token: String, secret: String) {
+        self.consumerToken = ConsumerToken(token: token, secret: secret)
     }
 
 }
