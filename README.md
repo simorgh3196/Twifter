@@ -54,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         // Set consumerToken and consumerSecret
         Twifter.registerConsumerKey(token: "*************************",
                                     secret: "**************************************************")
@@ -62,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        print(app, options)
-
         // Set handler of twitter oauth callback
         Twifter.handleOpenURL(url: url)
 
