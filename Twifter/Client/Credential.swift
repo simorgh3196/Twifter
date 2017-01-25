@@ -8,7 +8,7 @@
 
 import Accounts
 
-public class Credential {
+public struct Credential {
 
     public struct ConsumerToken {
         public var token: String
