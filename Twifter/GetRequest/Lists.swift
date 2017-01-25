@@ -1,12 +1,12 @@
 //
 //  Lists.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -14,7 +14,7 @@ import Foundation
 
  Returns all lists the authenticating or specified user subscribes to, including their own. The user is specified using the user_id or screen_name parameters. If no user is given, the authenticating user is used.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/list)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetListsList {
@@ -29,7 +29,7 @@ public struct GetListsList {
 
  Returns the members of the specified list. Private list members will only be shown if the authenticated user owns the specified list.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/members)
- 
+
  - Remark: Rate limit: (user) 180 / 15 min | (app) 15 / 15 min
  */
 public struct GetListsMembers {
@@ -49,7 +49,7 @@ public struct GetListsMembers {
 
  Check if the specified user is a member of the specified list.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/members/show)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetListsMembersShow {
@@ -69,7 +69,7 @@ public struct GetListsMembersShow {
 
  Returns the lists the specified user has been added to. If user_id or screen_name are not provided the memberships for the authenticating user are returned.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/memberships)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetListsMemberships {
@@ -86,7 +86,7 @@ public struct GetListsMemberships {
 
  Returns the lists owned by the specified Twitter user. Private lists will only be shown if the authenticated user is also the owner of the lists.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/ownerships)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetListsOwnerships {
@@ -102,7 +102,7 @@ public struct GetListsOwnerships {
 
  Returns the specified list. Private lists will only be shown if the authenticated user owns the specified list.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/show)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetListsShow {
@@ -118,7 +118,7 @@ public struct GetListsShow {
 
  Returns a timeline of tweets authored by members of the specified list. Retweets are included by default. Use the include_rts=false parameter to omit retweets.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/statuses)
- 
+
  - Remark: Rate limit: 180 / 15 min
  */
 public struct GetListsStatuses {
@@ -139,7 +139,7 @@ public struct GetListsStatuses {
 
  Returns the subscribers of the specified list. Private list subscribers will only be shown if the authenticated user owns the specified list.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/subscribers)
- 
+
  - Remark: Rate limit: (user) 180 / 15 min | (app) 15 / 15 min
  */
 public struct GetListsSubscribers {
@@ -159,7 +159,7 @@ public struct GetListsSubscribers {
 
  Check if the specified user is a subscriber of the specified list. Returns the user if they are subscriber.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/subscribers/show)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetListsSubscribersShow {
@@ -179,7 +179,7 @@ public struct GetListsSubscribersShow {
 
  Obtain a collection of the lists the specified user is subscribed to, 20 lists per page by default. Does not include the user’s own lists.
  [Read more ...](https://dev.twitter.com/rest/reference/get/lists/subscriptions)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetListsSubscriptions {

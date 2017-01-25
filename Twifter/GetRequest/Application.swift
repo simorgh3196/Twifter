@@ -1,12 +1,12 @@
 //
 //  Application.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -27,7 +27,7 @@ public struct GetApplicationRateLimitStatus {
     /**
      GET application/rate_limit_status
 
-     - parameter resources: 
+     - parameter resources:
             A comma-separated list of resource families you want to know the current rate limit disposition for.
             For best performance, only specify the resource families pertinent to your application.
             See API Rate Limiting for more information.

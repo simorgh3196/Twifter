@@ -1,15 +1,15 @@
 //
 //  Account.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
-//
 
-import Foundation
+import APIKit
 
 
-/**  
+/**
  GET account/settings
 
  Returns settings (including current trend, geo and sleep time information) for the authenticating user.
@@ -21,7 +21,7 @@ public struct GetAccountSettings {
 }
 
 
-/**  
+/**
  GET account/verify_credentials
 
  Returns an HTTP 200 OK response code and a representation of the requesting user if authentication was successful; returns a 401 status code and an error message if not. Use this method to test if supplied user credentials are valid.
@@ -30,6 +30,10 @@ public struct GetAccountSettings {
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetAccountVerifyCredentials {
+    let method: HTTPMethod = .get
+
+
+
     let includeEntities: Bool?
     let skipStatus: Bool?
     let includeEmail: Bool?
@@ -42,9 +46,9 @@ public struct GetAccountVerifyCredentials {
      - parameter skipStatus:
             When set to either true, t or 1 statuses will not be included in the returned user object.
      - parameter includeEmail:
-            Use of this parameter requires whitelisting. 
+            Use of this parameter requires whitelisting.
             When set to true email will be returned in the user objects as a string.
-            If the user does not have an email address on their account, 
+            If the user does not have an email address on their account,
             or if the email address is un-verified, null will be returned.
 
      - returns: Request

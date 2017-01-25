@@ -1,12 +1,12 @@
 //
 //  DirectMessages.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -17,7 +17,7 @@ import Foundation
  You can request up to 200 direct messages per call,
  and only the most recent 200 DMs will be available using this endpoint.
  [Read more ...](https://dev.twitter.com/rest/reference/get/direct_messages)
- 
+
  - Important:
         This method requires an access token with RWD (read, write & direct message) permissions.
         Consult [The Application Permission Model](https://dev.twitter.com/oauth/overview/application-permission-model) for more information.

@@ -1,21 +1,21 @@
 //
 //  Blocks.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
  GET blocks/ids
- 
+
  Returns an array of numeric user ids the authenticating user is blocking.
  [Read more ...](https://dev.twitter.com/rest/reference/get/blocks/ids)
- 
- - Important: 
+
+ - Important:
         This method is cursored, meaning your app must make multiple requests in order to receive all blocks correctly.
         See [Using cursors to navigate collections](https://dev.twitter.com/overview/api/cursoring) for more details on how cursoring works.
  - Remark:
@@ -53,9 +53,9 @@ struct GetBlocksIds {
 
  Returns a collection of user objects that the authenticating user is blocking.
  [Read more ...](https://dev.twitter.com/rest/reference/get/blocks/list)
- 
- 
- - Important: 
+
+
+ - Important:
         This method is cursored, meaning your app must make multiple requests in order to receive all blocks correctly.
         See [Using cursors to navigate collections](https://dev.twitter.com/overview/api/cursoring) for more details on how cursoring works.
  - Remark:
@@ -74,9 +74,9 @@ struct GetBlocksList {
      - parameter skipStatus:
             When set to either true, t or 1 statuses will not be included in the returned user object.
      - parameter includeEmail:
-            Use of this parameter requires whitelisting. 
+            Use of this parameter requires whitelisting.
             When set to true email will be returned in the user objects as a string.
-            If the user does not have an email address on their account, 
+            If the user does not have an email address on their account,
             or if the email address is un-verified, null will be returned.
 
      - returns: Request

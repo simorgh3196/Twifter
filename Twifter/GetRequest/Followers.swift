@@ -1,12 +1,12 @@
 //
 //  Followers.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -14,7 +14,7 @@ import Foundation
 
  Returns a cursored collection of user IDs for every user following the specified user.
  [Read more ...](https://dev.twitter.com/rest/reference/get/favorites/ids)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetFollowersIds {
@@ -31,7 +31,7 @@ public struct GetFollowersIds {
 
  Returns a cursored collection of user objects for users following the specified user.
  [Read more ...](https://dev.twitter.com/rest/reference/get/followers/list)
- 
+
  - Remark: Rate limit: (user auth) 15 / 15 min | (app auth) 30 / 15 min
  */
 public struct GetFollowersList {
