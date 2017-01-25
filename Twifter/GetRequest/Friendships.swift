@@ -1,19 +1,19 @@
 //
 //  Friendships.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
  GET friendships/incoming
 
  Returns a collection of numeric IDs for every user who has a pending request to follow the authenticating user.
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetFriendshipsIncoming {
@@ -40,7 +40,7 @@ public struct GetFriendshipsLookup {
 
  Returns a collection of user_ids that the currently authenticated user does not want to receive retweets from.
  [Read more ...](https://dev.twitter.com/rest/reference/get/friendships/incoming)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetFriendshipsNoRetweetIds {
@@ -53,7 +53,7 @@ public struct GetFriendshipsNoRetweetIds {
 
  Returns a collection of numeric IDs for every protected user for whom the authenticating user has a pending follow request.
  [Read more ...](https://dev.twitter.com/rest/reference/get/friendships/outgoing)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetFriendsOutgoing {
@@ -67,7 +67,7 @@ public struct GetFriendsOutgoing {
 
  Returns detailed information about the relationship between two arbitrary users.
  [Read more ...](https://dev.twitter.com/rest/reference/get/friendships/show)
- 
+
  - Remark: Rate limit: (user) 180 / 15 min | (app) 15 / 15 min
  */
 public struct GetFriendsShow {

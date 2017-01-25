@@ -1,9 +1,9 @@
 //
 //  QueryStringDataParser.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2017/01/12.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
 import APIKit

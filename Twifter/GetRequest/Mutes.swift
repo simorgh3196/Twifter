@@ -1,12 +1,12 @@
 //
 //  Mutes.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -14,7 +14,7 @@ import Foundation
 
  Returns an array of numeric user ids the authenticating user has muted.
  [Read more ...](https://dev.twitter.com/rest/reference/get/mutes/users/ids)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetMutesUsersIds {
@@ -27,7 +27,7 @@ public struct GetMutesUsersIds {
 
  Returns an array of user objects the authenticating user has muted.
  [Read more ...](https://dev.twitter.com/rest/reference/get/mutes/users/list)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetMutesUsersList {

@@ -1,12 +1,12 @@
 //
 //  Friends.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -14,7 +14,7 @@ import Foundation
 
  Returns a cursored collection of user IDs for every user the specified user is following (otherwise known as their “friends”).
  [Read more ...](https://dev.twitter.com/rest/reference/get/friends/ids)
- 
+
  - Remark: 15 / 15 min
  */
 public struct GetFriendsIds {

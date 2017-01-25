@@ -1,12 +1,12 @@
 //
 //  Statuses.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -14,7 +14,7 @@ import Foundation
 
  Returns a collection of the most recent Tweets and retweets posted by the authenticating user and the users they follow. The home timeline is central to how most users interact with the Twitter service.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/home_timeline)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetStatusesHomeTimeline {
@@ -33,7 +33,7 @@ public struct GetStatusesHomeTimeline {
 
  Returns fully-hydrated tweet objects for up to 100 tweets per request, as specified by comma-separated values passed to the id parameter.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/lookup)
- 
+
  - Remark: Rate limit: (user) 180 / 15 min | (app) 60 / 15 min
  */
 public struct GetStatusesLookup {
@@ -49,7 +49,7 @@ public struct GetStatusesLookup {
 
  Returns the 20 most recent mentions (tweets containing a users’s @screen_name) for the authenticating user.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/mentions_timeline)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetStatusesMentionsTimeline {
@@ -67,7 +67,7 @@ public struct GetStatusesMentionsTimeline {
 
  Returns a collection of up to 100 user IDs belonging to users who have retweeted the tweet specified by the id parameter.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/retweeters/ids)
- 
+
  - Remark: Rate limit: (user) 15 / 15 min | (app) 60 / 15 min
  */
 public struct GetStatusesRetweetersIds {
@@ -82,7 +82,7 @@ public struct GetStatusesRetweetersIds {
 
  Returns a collection of the 100 most recent retweets of the tweet specified by the id parameter.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/retweets/id)
- 
+
  - Remark: Rate limit: (user) 15 / 15 min | (app) 60 / 15 min
  */
 public struct GetStatusesRetweets {
@@ -97,7 +97,7 @@ public struct GetStatusesRetweets {
 
  Returns the most recent tweets authored by the authenticating user that have been retweeted by others. This timeline is a subset of the user’s GET statuses / user_timeline.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/retweets_of_me)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetStatusesRetweetsOfMe {
@@ -115,7 +115,7 @@ public struct GetStatusesRetweetsOfMe {
 
  Returns a single Tweet, specified by the id parameter. The Tweet’s author will also be embedded within the tweet.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/show/id)
- 
+
  - Remark: Rate limit: 180 / 15 min
  */
 public struct GetStatusesShow {
@@ -131,7 +131,7 @@ public struct GetStatusesShow {
 
  Returns a collection of the most recent Tweets posted by the user indicated by the screen_name or user_id parameters.
  [Read more ...](https://dev.twitter.com/rest/reference/get/statuses/user_timeline)
- 
+
  - Remark: Rate limit: (user) 180 / 15 min | (app) 300 / 15 min
  */
 public struct GetStatusesUserTimeline {

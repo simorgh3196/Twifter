@@ -1,12 +1,12 @@
 //
 //  Geo.swift
-//  Pods
+//  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/11/08.
-//
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
-import Foundation
+import APIKit
 
 
 /**
@@ -14,7 +14,7 @@ import Foundation
 
  Returns all the information about a known [place](https://dev.twitter.com/overview/api/places).
  [Read more ...](https://dev.twitter.com/rest/reference/get/geo/id/place_id)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetGeoId {
@@ -27,7 +27,7 @@ public struct GetGeoId {
 
  Given a latitude and a longitude, searches for up to 20 places that can be used as a place_id when updating a status.
  [Read more ...](https://dev.twitter.com/rest/reference/get/geo/reverse_geocode)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetGeoReverseGeocode {
@@ -45,7 +45,7 @@ public struct GetGeoReverseGeocode {
 
  Search for places that can be attached to a statuses/update.
  [Read more ...](https://dev.twitter.com/rest/reference/get/geo/search)
- 
+
  - Remark: Rate limit: 15 / 15 min
  */
 public struct GetGeoSearch {
