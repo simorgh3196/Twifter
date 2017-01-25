@@ -5,9 +5,9 @@
 [![Platform](https://img.shields.io/badge/platform-iOS-green.svg?style=flat)](https://github.com/apple/swift)
 [![Build Status](https://travis-ci.org/simorgh3196/Twifter.svg?branch=master)](https://travis-ci.org/simorgh3196/Twifter)
 
-## :exclamation: This is a beta version!
+### :exclamation: This is a beta version!
 
-# Task
+## Task
 - [ ] Twitter OAuth Authentication
   - [x] OAuth
   - [ ] iOS internal twitter account
@@ -25,13 +25,13 @@
   - [ ] tvOS
   - [ ] watchOS
 
-# Requirements
+## Requirements
 Xcode8.2, Swift 3.0.2  
 iOS 9.0 or later
 
-# Installation
+## Installation
 
-## Cocoapods
+### Cocoapods
 ```
 pod 'Twifter', '~> 0.0.2' 
 ```
@@ -43,7 +43,7 @@ github 'simorgh3196/Twifter'
 ```
 -->
 
-# Setup
+## Setup
 - Set `URL Types` in `Info.plist`
 - Set ConsumerToken, Secret and OAuth callback handler in `AppDeleagte.swift`
 ```swift
@@ -72,9 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-# Usage
+## Usage
 
-## OAuth Authentication
+### OAuth Authentication
 callbackURL is defined by `URL Types` in `Info.plist`
 ```swift
 let callbackURL = URL(string: "twifter://")!
@@ -90,7 +90,7 @@ Twifter.authentication(viewController: self, callbackURL: callbackURL, handler: 
 })
 ```
 
-## Get Tweets
+### Get Tweets
 ```swift
 let twifter = Twifter(accessToken: accessToken)
 twifter.getTimeline { tweets in
@@ -98,7 +98,7 @@ twifter.getTimeline { tweets in
 }
 ```
 
-# Document
+## Document
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/simorgh3196/Twifter](https://github.com/simorgh3196/Twifter).
