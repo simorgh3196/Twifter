@@ -21,11 +21,7 @@ public protocol TwifterRequest: Request {
 extension TwifterRequest {
 
     public var headerFields: [String: String] {
-//        let oauthHeaderFields = buildOAuthHeaderFields()
-//        let defaultHeaderFields: [String: String] = [
-//            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
-//        ]
-        return buildOAuthHeaderFields()
+        return buildOAuthHeaderFields() ++ additionalHeaderFields
     }
 
     public var additionalHeaderFields: [String: String] {
@@ -33,7 +29,7 @@ extension TwifterRequest {
     }
 
     public func buildOAuthHeaderFields() -> [String: String] {
-        var oauthParams: [String: String] = [
+        var oauthParameters: [String: String] = [
             "oauth_version": OAuth.version,
             "oauth_signature_method": OAuth.signatureMethod,
             "oauth_consumer_key": Credential.consumerToken.token,
@@ -42,13 +38,15 @@ extension TwifterRequest {
         ]
 
         if let oauthToken = credential.accessToken?.token {
-            oauthParams["oauth_token"] = oauthToken
+            oauthParameters["oauth_token"] = oauthToken
         }
 
-        var parameters = oauthParams.push(dictionary: additionalHeaderFields)
-        parameters["oauth_signature"] = buildOAuthSignature(parameters: parameters)
+        additionalHeaderFields.filter { $0.key.hasPrefix("oauth_") }.forEach {
+            oauthParameters[$0.key] = $0.value
+        }
+        oauthParameters["oauth_signature"] = buildOAuthSignature(parameters: oauthParameters)
 
-        let headerComponents = parameters
+        let headerComponents = oauthParameters
             .map {
                 let key = $0.urlEncoded()
                 let value = "\"" + $1.urlEncoded(encodeAll: key == "status") + "\""

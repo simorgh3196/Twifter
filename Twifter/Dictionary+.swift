@@ -9,8 +9,8 @@
 
 extension Dictionary {
 
-    func push(dictionary: Dictionary<Key, Value>) -> Dictionary<Key, Value> {
-        var dic = Dictionary<Key, Value>()
+    func push(dictionary: [Key: Value]) -> [Key: Value] {
+        var dic = [Key: Value]()
         for (key, value) in self {
             dic[key] = value
         }
@@ -20,4 +20,18 @@ extension Dictionary {
         return dic
     }
 
+}
+
+
+infix operator ++
+
+func ++ <Key, Value>(left: [Key: Value], right: [Key: Value]) -> [Key: Value] {
+    var dic = [Key: Value]()
+    for (key, value) in left {
+        dic[key] = value
+    }
+    for (key, value) in right {
+        dic[key] = value
+    }
+    return dic
 }

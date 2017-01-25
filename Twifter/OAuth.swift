@@ -1,29 +1,12 @@
 //
-//  OAuthRequest.swift
+//  OAuth.swift
 //  Twifter
 //
 //  Created by Tomoya Hayakawa on 2016/12/27.
-//  Copyright © 2016年 simorgh. All rights reserved.
+//  Copyright © 2016年 simorgh3196. All rights reserved.
 //
 
 import APIKit
-
-
-public protocol OAuthRequest: TwifterRequest {
-}
-
-extension OAuthRequest {
-
-    public var baseURL: URL {
-        return URL(string: "https://api.twitter.com")!
-    }
-
-    public var dataParser: DataParser {
-        return QueryStringDataParser()
-    }
-
-}
-
 
 public struct FetchOAuthRequestToken: OAuthRequest {
     public let method: HTTPMethod = .post
@@ -58,17 +41,7 @@ public struct FetchOAuthAccessToken: OAuthRequest {
     public typealias Response = Credential.AccessToken
 
     public var additionalHeaderFields: [String: String]? {
-        return [
-            "oauth_token": credential.accessToken!.token,
-            "oauth_verifier": verifier
-        ]
-    }
-
-    public var queryParameters: [String : Any]? {
-        return [
-            "oauth_token": credential.accessToken!.token,
-            "oauth_verifier": verifier
-        ]
+        return ["oauth_verifier": verifier]
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Credential.AccessToken {

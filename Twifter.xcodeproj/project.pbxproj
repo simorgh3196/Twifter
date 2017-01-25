@@ -10,12 +10,14 @@
 		61147AC41F540931E153F484 /* Pods_Twifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8606F13D6727B1E03C5666D9 /* Pods_Twifter.framework */; };
 		F2CCEC0D403A947BC7D9F4DB /* Pods_TwifterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACBB3AE975E3B41FF46B268 /* Pods_TwifterTests.framework */; };
 		F825F3CE1E28DA5C00F597CC /* QueryStringDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F825F3CD1E28DA5C00F597CC /* QueryStringDataParser.swift */; };
+		F850C10E1E35E1EF00FE58C9 /* OAuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850C10D1E35E1EF00FE58C9 /* OAuthRequest.swift */; };
+		F850C1101E35E24100FE58C9 /* RestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850C10F1E35E24100FE58C9 /* RestApiRequest.swift */; };
 		F880135D1DC48206008E8FBD /* Twifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88013531DC48206008E8FBD /* Twifter.framework */; };
 		F88013621DC48206008E8FBD /* TwifterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88013611DC48206008E8FBD /* TwifterTests.swift */; };
 		F88013641DC48206008E8FBD /* Twifter.h in Headers */ = {isa = PBXBuildFile; fileRef = F88013561DC48206008E8FBD /* Twifter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F880136E1DC482E0008E8FBD /* Twifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F880136D1DC482E0008E8FBD /* Twifter.swift */; };
 		F8D5648A1E12A42F008CEA73 /* TwifterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564881E12A42F008CEA73 /* TwifterError.swift */; };
-		F8D564911E12A585008CEA73 /* OAuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564901E12A585008CEA73 /* OAuthRequest.swift */; };
+		F8D564911E12A585008CEA73 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564901E12A585008CEA73 /* OAuth.swift */; };
 		F8D564951E15F209008CEA73 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564941E15F209008CEA73 /* Credential.swift */; };
 		F8D564981E161DF1008CEA73 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D564971E161DF1008CEA73 /* Dictionary+.swift */; };
 		F8D5649D1E168F83008CEA73 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5649C1E168F83008CEA73 /* SHA1.swift */; };
@@ -64,6 +66,8 @@
 		D6608A653E5C1055DFF47419 /* Pods-Twifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twifter/Pods-Twifter.debug.xcconfig"; sourceTree = "<group>"; };
 		E0DD7F6EB0A78C810EEC8AD4 /* Pods-Twifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twifter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twifter/Pods-Twifter.release.xcconfig"; sourceTree = "<group>"; };
 		F825F3CD1E28DA5C00F597CC /* QueryStringDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringDataParser.swift; sourceTree = "<group>"; };
+		F850C10D1E35E1EF00FE58C9 /* OAuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthRequest.swift; sourceTree = "<group>"; };
+		F850C10F1E35E24100FE58C9 /* RestApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiRequest.swift; sourceTree = "<group>"; };
 		F88013531DC48206008E8FBD /* Twifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Twifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88013561DC48206008E8FBD /* Twifter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twifter.h; sourceTree = "<group>"; };
 		F88013571DC48206008E8FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 		F88013631DC48206008E8FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F880136D1DC482E0008E8FBD /* Twifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twifter.swift; sourceTree = "<group>"; };
 		F8D564881E12A42F008CEA73 /* TwifterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwifterError.swift; sourceTree = "<group>"; };
-		F8D564901E12A585008CEA73 /* OAuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthRequest.swift; sourceTree = "<group>"; };
+		F8D564901E12A585008CEA73 /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		F8D564941E15F209008CEA73 /* Credential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		F8D564971E161DF1008CEA73 /* Dictionary+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
 		F8D5649C1E168F83008CEA73 /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
@@ -80,7 +84,7 @@
 		F8D564A01E168FD6008CEA73 /* Data+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+OAuthSwift.swift"; sourceTree = "<group>"; };
 		F8D564A21E1690FB008CEA73 /* Collection+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+OAuthSwift.swift"; sourceTree = "<group>"; };
 		F8D564A41E16A602008CEA73 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		F8D564A61E16A68C008CEA73 /* TwifterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwifterRequest.swift; sourceTree = "<group>"; };
+		F8D564A61E16A68C008CEA73 /* TwifterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwifterRequest.swift; path = ../TwifterRequest.swift; sourceTree = "<group>"; };
 		F8D564A81E17981A008CEA73 /* Int+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+OAuthSwift.swift"; sourceTree = "<group>"; };
 		F8E7FE561DD0EB2900451D92 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		F8E7FE571DD0EB2900451D92 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -144,6 +148,77 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F850C1071E3545DB00FE58C9 /* REST APIs */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7FE561DD0EB2900451D92 /* Account.swift */,
+				F8E7FE571DD0EB2900451D92 /* Application.swift */,
+				F8E7FE581DD0EB2900451D92 /* Blocks.swift */,
+				F8E7FE591DD0EB2900451D92 /* Collections.swift */,
+				F8E7FE5A1DD0EB2900451D92 /* DirectMessages.swift */,
+				F8E7FE5B1DD0EB2900451D92 /* Favorites.swift */,
+				F8E7FE5C1DD0EB2900451D92 /* Followers.swift */,
+				F8E7FE5D1DD0EB2900451D92 /* Friends.swift */,
+				F8E7FE5E1DD0EB2900451D92 /* Friendships.swift */,
+				F8E7FE5F1DD0EB2900451D92 /* Geo.swift */,
+				F8E7FE601DD0EB2900451D92 /* Help.swift */,
+				F8E7FE611DD0EB2900451D92 /* Lists.swift */,
+				F8E7FE621DD0EB2900451D92 /* Mutes.swift */,
+				F8E7FE631DD0EB2900451D92 /* Projects.swift */,
+				F8E7FE641DD0EB2900451D92 /* SavedSearches.swift */,
+				F8E7FE651DD0EB2900451D92 /* Search.swift */,
+				F8E7FE661DD0EB2900451D92 /* Statuses.swift */,
+				F8E7FE671DD0EB2900451D92 /* Trends.swift */,
+				F8E7FE681DD0EB2900451D92 /* Users.swift */,
+			);
+			name = "REST APIs";
+			sourceTree = "<group>";
+		};
+		F850C1081E35460500FE58C9 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				F8D564941E15F209008CEA73 /* Credential.swift */,
+				F8D564881E12A42F008CEA73 /* TwifterError.swift */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		F850C1091E35460E00FE58C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F88013561DC48206008E8FBD /* Twifter.h */,
+				F88013571DC48206008E8FBD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F850C10A1E35465600FE58C9 /* APIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F825F3CD1E28DA5C00F597CC /* QueryStringDataParser.swift */,
+			);
+			name = APIKit;
+			sourceTree = "<group>";
+		};
+		F850C10B1E35468200FE58C9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				F8D564971E161DF1008CEA73 /* Dictionary+.swift */,
+				F8D564A41E16A602008CEA73 /* String+.swift */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		F850C10C1E3547FE00FE58C9 /* RequestTypes */ = {
+			isa = PBXGroup;
+			children = (
+				F8D564A61E16A68C008CEA73 /* TwifterRequest.swift */,
+				F850C10D1E35E1EF00FE58C9 /* OAuthRequest.swift */,
+				F850C10F1E35E24100FE58C9 /* RestApiRequest.swift */,
+			);
+			name = RequestTypes;
+			sourceTree = "<group>";
+		};
 		F88013491DC48206008E8FBD = {
 			isa = PBXGroup;
 			children = (
@@ -167,15 +242,11 @@
 		F88013551DC48206008E8FBD /* Twifter */ = {
 			isa = PBXGroup;
 			children = (
-				F88013561DC48206008E8FBD /* Twifter.h */,
-				F88013571DC48206008E8FBD /* Info.plist */,
-				F8E7FE551DD0EB2900451D92 /* REST API */,
 				F880136D1DC482E0008E8FBD /* Twifter.swift */,
-				F8D564A61E16A68C008CEA73 /* TwifterRequest.swift */,
-				F8D564941E15F209008CEA73 /* Credential.swift */,
-				F8D564881E12A42F008CEA73 /* TwifterError.swift */,
-				F825F3CD1E28DA5C00F597CC /* QueryStringDataParser.swift */,
+				F850C1081E35460500FE58C9 /* Client */,
+				F8E7FE551DD0EB2900451D92 /* Request */,
 				F8D564961E161DD6008CEA73 /* Extensions */,
+				F850C1091E35460E00FE58C9 /* Supporting Files */,
 			);
 			path = Twifter;
 			sourceTree = "<group>";
@@ -192,7 +263,7 @@
 		F8D564841E129456008CEA73 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				F8D564901E12A585008CEA73 /* OAuthRequest.swift */,
+				F8D564901E12A585008CEA73 /* OAuth.swift */,
 			);
 			name = OAuth;
 			path = ..;
@@ -201,9 +272,9 @@
 		F8D564961E161DD6008CEA73 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F850C10B1E35468200FE58C9 /* Foundation */,
+				F850C10A1E35465600FE58C9 /* APIKit */,
 				F8D564991E168F25008CEA73 /* CommonCrypto */,
-				F8D564971E161DF1008CEA73 /* Dictionary+.swift */,
-				F8D564A41E16A602008CEA73 /* String+.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -220,31 +291,14 @@
 			name = CommonCrypto;
 			sourceTree = "<group>";
 		};
-		F8E7FE551DD0EB2900451D92 /* REST API */ = {
+		F8E7FE551DD0EB2900451D92 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				F850C10C1E3547FE00FE58C9 /* RequestTypes */,
 				F8D564841E129456008CEA73 /* OAuth */,
-				F8E7FE561DD0EB2900451D92 /* Account.swift */,
-				F8E7FE571DD0EB2900451D92 /* Application.swift */,
-				F8E7FE581DD0EB2900451D92 /* Blocks.swift */,
-				F8E7FE591DD0EB2900451D92 /* Collections.swift */,
-				F8E7FE5A1DD0EB2900451D92 /* DirectMessages.swift */,
-				F8E7FE5B1DD0EB2900451D92 /* Favorites.swift */,
-				F8E7FE5C1DD0EB2900451D92 /* Followers.swift */,
-				F8E7FE5D1DD0EB2900451D92 /* Friends.swift */,
-				F8E7FE5E1DD0EB2900451D92 /* Friendships.swift */,
-				F8E7FE5F1DD0EB2900451D92 /* Geo.swift */,
-				F8E7FE601DD0EB2900451D92 /* Help.swift */,
-				F8E7FE611DD0EB2900451D92 /* Lists.swift */,
-				F8E7FE621DD0EB2900451D92 /* Mutes.swift */,
-				F8E7FE631DD0EB2900451D92 /* Projects.swift */,
-				F8E7FE641DD0EB2900451D92 /* SavedSearches.swift */,
-				F8E7FE651DD0EB2900451D92 /* Search.swift */,
-				F8E7FE661DD0EB2900451D92 /* Statuses.swift */,
-				F8E7FE671DD0EB2900451D92 /* Trends.swift */,
-				F8E7FE681DD0EB2900451D92 /* Users.swift */,
+				F850C1071E3545DB00FE58C9 /* REST APIs */,
 			);
-			name = "REST API";
+			name = Request;
 			path = GetRequest;
 			sourceTree = "<group>";
 		};
@@ -450,11 +504,13 @@
 				F8E7FE6B1DD0EB2900451D92 /* Blocks.swift in Sources */,
 				F8E7FE731DD0EB2900451D92 /* Help.swift in Sources */,
 				F8E7FE781DD0EB2900451D92 /* Search.swift in Sources */,
+				F850C10E1E35E1EF00FE58C9 /* OAuthRequest.swift in Sources */,
 				F8E7FE6D1DD0EB2900451D92 /* DirectMessages.swift in Sources */,
 				F8E7FE711DD0EB2900451D92 /* Friendships.swift in Sources */,
 				F825F3CE1E28DA5C00F597CC /* QueryStringDataParser.swift in Sources */,
 				F8E7FE741DD0EB2900451D92 /* Lists.swift in Sources */,
 				F880136E1DC482E0008E8FBD /* Twifter.swift in Sources */,
+				F850C1101E35E24100FE58C9 /* RestApiRequest.swift in Sources */,
 				F8E7FE701DD0EB2900451D92 /* Friends.swift in Sources */,
 				F8E7FE6E1DD0EB2900451D92 /* Favorites.swift in Sources */,
 				F8E7FE7B1DD0EB2900451D92 /* Users.swift in Sources */,
@@ -468,7 +524,7 @@
 				F8E7FE791DD0EB2900451D92 /* Statuses.swift in Sources */,
 				F8D564A51E16A602008CEA73 /* String+.swift in Sources */,
 				F8E7FE761DD0EB2900451D92 /* Projects.swift in Sources */,
-				F8D564911E12A585008CEA73 /* OAuthRequest.swift in Sources */,
+				F8D564911E12A585008CEA73 /* OAuth.swift in Sources */,
 				F8D564A31E1690FB008CEA73 /* Collection+OAuthSwift.swift in Sources */,
 				F8D5649F1E168F9C008CEA73 /* HMAC.swift in Sources */,
 				F8E7FE6C1DD0EB2900451D92 /* Collections.swift in Sources */,
