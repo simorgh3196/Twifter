@@ -5,6 +5,8 @@
 [![Platform](https://img.shields.io/badge/platform-iOS-green.svg?style=flat)](https://github.com/apple/swift)
 [![Build Status](https://travis-ci.org/simorgh3196/Twifter.svg?branch=master)](https://travis-ci.org/simorgh3196/Twifter)
 
+## :exclamation: This is a beta version!
+
 # Task
 - [ ] Twitter OAuth Authentication
   - [x] OAuth
@@ -24,7 +26,7 @@
   - [ ] watchOS
 
 # Requirements
-Swift 3.0.2  
+Xcode8.2, Swift 3.0.2  
 iOS 9.0 or later
 
 # Installation
