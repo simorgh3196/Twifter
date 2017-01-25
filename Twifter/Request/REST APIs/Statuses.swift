@@ -8,7 +8,6 @@
 
 import APIKit
 
-
 /**
  GET statuses/home_timeline
 
@@ -17,14 +16,28 @@ import APIKit
 
  - Remark: Rate limit: 15 / 15 min
  */
-public struct GetStatusesHomeTimeline {
-    let count: Int?
-    let sinceId: String?
-    let maxId: String?
-    let trimUser: Bool?
-    let excludeReplies: Bool?
-    let contributorDetails: Bool?
-    let includeEntities: Bool?
+public struct GetStatusesHomeTimeline: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/statuses/home_timeline.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "count": count,
+            "since_id": sinceId,
+            "max_id": maxId,
+            "trim_user": trimUser,
+            "exclude_replies": excludeReplies,
+            "include_entities": includeEntities
+            ])
+    }
+
+    public let credential: Credential
+    public let count: Int?
+    public let sinceId: String?
+    public let maxId: String?
+    public let trimUser: Bool?
+    public let excludeReplies: Bool?
+    public let includeEntities: Bool?
 }
 
 
@@ -36,11 +49,24 @@ public struct GetStatusesHomeTimeline {
 
  - Remark: Rate limit: (user) 180 / 15 min | (app) 60 / 15 min
  */
-public struct GetStatusesLookup {
-    let id: String
-    let includeEntities: Bool?
-    let trimUser: Bool?
-    let map: Bool?
+public struct GetStatusesLookup: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/statuses/lookup.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "id": id,
+            "include_entities": includeEntities,
+            "trim_user": trimUser,
+            "map": map
+            ])
+    }
+
+    public let credential: Credential
+    public let id: String
+    public let includeEntities: Bool?
+    public let trimUser: Bool?
+    public let map: Bool?
 }
 
 
@@ -52,12 +78,25 @@ public struct GetStatusesLookup {
 
  - Remark: Rate limit: 15 / 15 min
  */
-public struct GetStatusesMentionsTimeline {
+public struct GetStatusesMentionsTimeline: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/statuses/mentions_timeline.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "count": count,
+            "since_id": sinceId,
+            "max_id": maxId,
+            "trim_user": trimUser,
+            "include_entities": includeEntities
+            ])
+    }
+
+    public let credential: Credential
     let count: Int?
     let sinceId: String?
     let maxId: String?
     let trimUser: Bool?
-    let contributorDetails: Bool?
     let includeEntities: Bool?
 }
 
@@ -70,10 +109,22 @@ public struct GetStatusesMentionsTimeline {
 
  - Remark: Rate limit: (user) 15 / 15 min | (app) 60 / 15 min
  */
-public struct GetStatusesRetweetersIds {
-    let id: String
-    let cursor: Int? // semi-optional
-    let stringifyIds: Bool?
+public struct GetStatusesRetweetersIds: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/statuses/retweeters/ids.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "id": id,
+            "cursor": cursor,
+            "stringify_ids": stringifyIds
+            ])
+    }
+
+    public let credential: Credential
+    public let id: String
+    public let cursor: Int? // semi-optional
+    public let stringifyIds: Bool?
 }
 
 
@@ -85,10 +136,23 @@ public struct GetStatusesRetweetersIds {
 
  - Remark: Rate limit: (user) 15 / 15 min | (app) 60 / 15 min
  */
-public struct GetStatusesRetweets {
-    let id: String
-    let count: Int?
-    let trimUser: Bool?
+public struct GetStatusesRetweets: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public var path: String {
+        return "/statuses/retweets/\(id).json"
+    }
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "count": count,
+            "trim_user": trimUser
+            ])
+    }
+
+    public let credential: Credential
+    public let id: String
+    public let count: Int?
+    public let trimUser: Bool?
 }
 
 
@@ -100,13 +164,28 @@ public struct GetStatusesRetweets {
 
  - Remark: Rate limit: 15 / 15 min
  */
-public struct GetStatusesRetweetsOfMe {
-    let count: Int?
-    let sinceId: String?
-    let maxId: String?
-    let trimUser: Bool?
-    let includeEntities: Bool?
-    let includeUserEntities: Bool?
+public struct GetStatusesRetweetsOfMe: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/statuses/retweeters/ids.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "count": count,
+            "since_id": sinceId,
+            "max_id": maxId,
+            "trim_user": trimUser,
+            "include_entities": includeEntities,
+            "include_user_entities": includeUserEntities
+            ])
+    }
+
+    public let credential: Credential
+    public let count: Int?
+    public let sinceId: String?
+    public let maxId: String?
+    public let trimUser: Bool?
+    public let includeEntities: Bool?
+    public let includeUserEntities: Bool?
 }
 
 
@@ -118,11 +197,25 @@ public struct GetStatusesRetweetsOfMe {
 
  - Remark: Rate limit: 180 / 15 min
  */
-public struct GetStatusesShow {
-    let id: String
-    let trimUser: Bool?
-    let includeMyRetweet: Bool?
-    let includeEntities: Bool?
+public struct GetStatusesShow: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public var path: String {
+        return "/statuses/show/\(id).json"
+    }
+
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "trim_user": trimUser,
+            "include_my_retweet": includeMyRetweet,
+            "include_entities": includeEntities
+            ])
+    }
+
+    public let credential: Credential
+    public let id: String
+    public let trimUser: Bool?
+    public let includeMyRetweet: Bool?
+    public let includeEntities: Bool?
 }
 
 
@@ -134,14 +227,32 @@ public struct GetStatusesShow {
 
  - Remark: Rate limit: (user) 180 / 15 min | (app) 300 / 15 min
  */
-public struct GetStatusesUserTimeline {
-    let userId: String?
-    let screenName: String?
-    let sinceId: String?
-    let count: Int?
-    let maxId: String?
-    let trimUser: Bool?
-    let excludeReplies: Bool?
-    let contributorDetails: Bool?
-    let includeRts: Bool?
+public struct GetStatusesUserTimeline: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/statuses/user_timeline.json"
+
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "user_id": userId,
+            "screen_name": screenName,
+            "since_id": sinceId,
+            "count": count,
+            "max_id": maxId,
+            "trim_user": trimUser,
+            "exclude_replies": excludeReplies,
+            "contributor_details": contributorDetails,
+            "include_rts": includeRts
+            ])
+    }
+
+    public let credential: Credential
+    public let userId: String?
+    public let screenName: String?
+    public let sinceId: String?
+    public let count: Int?
+    public let maxId: String?
+    public let trimUser: Bool?
+    public let excludeReplies: Bool?
+    public let contributorDetails: Bool?
+    public let includeRts: Bool?
 }
