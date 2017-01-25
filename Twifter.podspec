@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Twifter"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.summary          = "Library of manage twitterAPI for iOS written in Swift"
   s.homepage         = "https://github.com/simorgh3196/Twifter"
   s.license          = 'MIT'
@@ -12,4 +12,6 @@ Pod::Spec.new do |s|
 
   s.source_files  = 'Twifter/**/*.{swift}'
   s.resources     = "Twifter/**/*"
+
+  s.dependency 'APIKit', '3.1.1'
 end
