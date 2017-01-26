@@ -8,6 +8,8 @@
 
 import APIKit
 
+// MARK: - GET Request
+
 /**
  GET statuses/home_timeline
 
@@ -255,4 +257,118 @@ public struct GetStatusesUserTimeline: RestApiRequest {
     public let excludeReplies: Bool?
     public let contributorDetails: Bool?
     public let includeRts: Bool?
+}
+
+
+// MARK: - POST Request
+
+/**
+ POST statuses/destroy/:id
+
+ Destroys the status specified by the required ID parameter. The authenticating user must be the author of the specified status. Returns the destroyed status if successful.
+ [Read more ...](https://dev.twitter.com/rest/reference/post/statuses/destroy/id)
+ */
+public struct PostStatusesDestroy: RestApiRequest {
+    public let method: HTTPMethod = .post
+    public var path: String {
+        return "/statuses/retweets/\(id).json"
+    }
+
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "id": id,
+            "trim_user": trimUser
+            ])
+    }
+
+    public let credential: Credential
+    public let id: Int
+    public let trimUser: Bool?
+}
+
+
+/**
+ POST statuses/retweet/:id
+
+ Retweets a tweet. Returns the original tweet with retweet details embedded.
+ [Read more ...](https://dev.twitter.com/rest/reference/post/statuses/retweet/id)
+ */
+public struct PostStatusesRetweet: RestApiRequest {
+    public let method: HTTPMethod = .post
+    public var path: String {
+        return "/statuses/retweets/\(id).json"
+    }
+
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "id": id,
+            "trim_user": trimUser
+            ])
+    }
+
+    public let credential: Credential
+    public let id: Int
+    public let trimUser: Bool?
+}
+
+
+/**
+ POST statuses/unretweet/:id
+
+ Untweets a retweeted status. Returns the original Tweet with retweet details embedded.
+ [Read more ...](https://dev.twitter.com/rest/reference/post/statuses/unretweet/id)
+ */
+public struct PostStatusesUnretweet: RestApiRequest {
+    public let method: HTTPMethod = .post
+    public var path: String {
+        return "/statuses/unretweet/\(id).json"
+    }
+
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "id": id,
+            "trim_user": trimUser
+            ])
+    }
+
+    public let credential: Credential
+    public let id: Int
+    public let trimUser: Bool?
+}
+
+
+/**
+ POST statuses/update
+
+ Updates the authenticating user’s current status, also known as Tweeting.
+ [Read more ...](https://dev.twitter.com/rest/reference/post/statuses/update)
+ */
+public struct PostStatusesUpdate: RestApiRequest {
+    public let method: HTTPMethod = .post
+    public var path = "/statuses/update.json"
+
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "status": status,
+            "in_reply_to_status_id": inReplyToStatusId,
+            "possibly_sensitive": possiblySensitive,
+            "lat": lat,
+            "long": long,
+            "place_id": placeId,
+            "display_coordinates": displayCoordinates,
+            "trim_user": trimUser,
+            "media_ids": mediaIds?.joined(separator: ",")
+            ])
+    }
+
+    public let credential: Credential
+    public let status: String
+    public let inReplyToStatusId: String?
+    public let possiblySensitive: String?
+    public let lat: String?
+    public let long: String?
+    public let placeId: String?
+    public let displayCoordinates: String?
+    public let trimUser: Bool?
+    public let mediaIds: [String]?
 }
