@@ -8,6 +8,7 @@
 
 import APIKit
 
+// MARK: - GET Request
 
 /**
  GET account/settings
@@ -17,7 +18,11 @@ import APIKit
 
  - Remark: Rate limit: 15 / 15 min
  */
-public struct GetAccountSettings {
+public struct GetAccountSettings: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/account/settings.json"
+
+    public let credential: Credential
 }
 
 
@@ -29,33 +34,20 @@ public struct GetAccountSettings {
 
  - Remark: Rate limit: 15 / 15 min
  */
-public struct GetAccountVerifyCredentials {
-    let method: HTTPMethod = .get
+public struct GetAccountVerifyCredentials: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/account/verify_credentials.json"
 
-
-
-    let includeEntities: Bool?
-    let skipStatus: Bool?
-    let includeEmail: Bool?
-
-    /**
-     GET account/verify_credentials
-
-     - parameter includeEntities:
-            The entities node will not be included when set to false.
-     - parameter skipStatus:
-            When set to either true, t or 1 statuses will not be included in the returned user object.
-     - parameter includeEmail:
-            Use of this parameter requires whitelisting.
-            When set to true email will be returned in the user objects as a string.
-            If the user does not have an email address on their account,
-            or if the email address is un-verified, null will be returned.
-
-     - returns: Request
-     */
-    init(includeEntities: Bool? = nil, skipStatus: Bool? = nil, includeEmail: Bool? = nil) {
-        self.includeEntities = includeEntities
-        self.skipStatus = skipStatus
-        self.includeEmail = includeEmail
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "include_entities": includeEntities,
+            "skip_status": skipStatus,
+            "include_email": includeEmail
+        ])
     }
+
+    public let credential: Credential
+    public let includeEntities: Bool?
+    public let skipStatus: Bool?
+    public let includeEmail: Bool?
 }
