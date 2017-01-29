@@ -17,24 +17,20 @@ import APIKit
 
  - Remark: Rate limit: 180 / 15 min
  */
-public struct GetApplicationRateLimitStatus {
-    let resources: Resources?
+public struct GetApplicationRateLimitStatus: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/application/rate_limit_status.json"
+
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "resources": resources?.rawValue
+            ])
+    }
 
     public enum Resources: String {
         case statuses, friends, trends, help
     }
 
-    /**
-     GET application/rate_limit_status
-
-     - parameter resources:
-            A comma-separated list of resource families you want to know the current rate limit disposition for.
-            For best performance, only specify the resource families pertinent to your application.
-            See API Rate Limiting for more information.
-
-     - returns: Request
-     */
-    init(resources: Resources? = nil) {
-        self.resources = resources
-    }
+    public let credential: Credential
+    public let resources: Resources?
 }
