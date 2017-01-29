@@ -21,30 +21,21 @@ import APIKit
  - Remark:
         Rate limit: 15 / 15 min
  */
-struct GetBlocksIds {
-    let stringifyIds: Bool?
-    let cursor: Int?
+public struct GetBlocksIds: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/blocks/ids.json"
 
-    /**
-     GET blocks/ids
-
-     - parameter stringifyIds:
-            Many programming environments will not consume our ids due to their size.
-            Provide this option to have ids returned as strings instead. Read more about Twitter IDs.
-     - parameter cursor:
-            Causes the list of IDs to be broken into pages of no more than 5000 IDs at a time.
-            The number of IDs returned is not guaranteed to be 5000 as suspended users are filtered
-            out after connections are queried.
-            If no cursor is provided, a value of -1 will be assumed, which is the first “page.”
-            The response from the API will include a previous_cursor and next_cursor to allow paging
-            back and forth. See Using cursors to navigate collections for more information.
-
-     - returns: Request
-     */
-    init(stringifyIds: Bool? = nil, cursor: Int?) {
-        self.stringifyIds = stringifyIds
-        self.cursor = cursor
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "stringify_ids": stringifyIds,
+            "cursor": cursor
+            ])
     }
+
+    public let credential: Credential
+    public let stringifyIds: Bool?
+    public let cursor: String?
+
 }
 
 
@@ -61,29 +52,20 @@ struct GetBlocksIds {
  - Remark:
         Rate limit: 15 / 15 min
  */
-struct GetBlocksList {
-    let includeEntities: Bool?
-    let skipStatus: Bool?
-    let includeEmail: Bool?
+public struct GetBlocksList: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/blocks/list.json"
 
-    /**
-     GET account/verify_credentials
-
-     - parameter includeEntities:
-            The entities node will not be included when set to false.
-     - parameter skipStatus:
-            When set to either true, t or 1 statuses will not be included in the returned user object.
-     - parameter includeEmail:
-            Use of this parameter requires whitelisting.
-            When set to true email will be returned in the user objects as a string.
-            If the user does not have an email address on their account,
-            or if the email address is un-verified, null will be returned.
-
-     - returns: Request
-     */
-    init(includeEntities: Bool? = nil, skipStatus: Bool? = nil, includeEmail: Bool? = nil) {
-        self.includeEntities = includeEntities
-        self.skipStatus = skipStatus
-        self.includeEmail = includeEmail
+    public var queryParameters: [String : Any] {
+        return query(from: [
+            "include_entities": includeEntities,
+            "skip_status": skipStatus,
+            "include_email": includeEmail
+            ])
     }
+
+    public let credential: Credential
+    public let includeEntities: Bool?
+    public let skipStatus: Bool?
+    public let includeEmail: Bool?
 }
