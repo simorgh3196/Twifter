@@ -1,14 +1,14 @@
 desc 'Run xcodebuild'
-task :build, [:action, :scheme, :sdk, :destination] do |_, args|
+task :build, [:action, :workspace, :scheme, :sdk, :destination] do |_, args|
   cmd = %W(
     xcodebuild #{args.action}
-    -scheme "#{args.scheme}"
-    -sdk #{args.sdk}
-    -destination "#{args.destination}"
-    -configuration Release
-    ENABLE_TESTABILITY=YES
-    GCC_GENERATE_DEBUGGING_SYMBOLS=NO
+        -workspace #{args.workspace}.xcworkspace
+        -scheme #{args.scheme}
+        -sdk #{args.sdk}
+        -destination #{args.destination}
+        -configuration Debug
+        ONLY_ACTIVE_ARCH=NO
   )
 
-  sh "set -eu -o pipefail && env NSUnbufferedIO=YES #{cmd.join(' ')} | xcpretty"
+  sh "set -eu -o pipefail && #{cmd.join(' ')} | xcpretty -c"
 end
