@@ -1,15 +1,12 @@
 language: objective-c
-osx_image: xcode8.1
-xcode_workspace: Twifter.xcworkspace
-xcode_scheme: Twifter
+osx_image: xcode8.2
 
 before_install:
     - gem install xcpretty
 
 script:
     - pod lib lint
-    - rake "build[build, Twifter, iphonesimulator, name=iPhone 6s]"
-    - rake "build[test, Twifter, iphonesimulator, name=iPhone 6s]"
+    - rake build[ "test", "Twifter", "Twifter", "iphonesimulator10.2", "platform=iOS Simulator,name=iPhone 6s" ]
 
 notifications:
     email: false
