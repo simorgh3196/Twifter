@@ -2,11 +2,21 @@ language: objective-c
 osx_image: xcode8.2
 
 before_install:
-    - gem install xcpretty
+	- bundle install --path=vendor/bundle
+	- bundle exec pod repo update --silent
+	- bundle exec pod install
+
+before_script:
+        - set -o pipefail
 
 script:
-    - pod lib lint
-    - rake build[ "test", "Twifter", "Twifter", "iphonesimulator10.2", "platform=iOS Simulator,name=iPhone 6s" ]
+        - xcodebuild test
+		  -workspace Twifter.xcworkspace
+		  -scheme Twifter
+		  -sdk iphonesimulator
+		  -destination 'platform=iOS Simulator,OS=10.2,id=31E6604A-19AA-4B68-B560-C33C584BC80D'
+		  ONLY_ACTIVE_ARCH=NO
+		  | xcpretty -c
 
-notifications:
-    email: false
+after_success:
+	- bash <(curl -s https://codecov.io/bash))
