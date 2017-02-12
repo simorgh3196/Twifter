@@ -40,7 +40,7 @@ public class Twifter {
         Credential.registerConsumerToken(token: token, secret: secret)
     }
 
-    public class func handleOpenURL(url: URL) {
+    public class func handle(open url: URL) {
         let notification = Notification(name: .twifterOAuthCallback, object: nil, userInfo: [NotificationInfoKey.oauthRedirectedURL: url])
         NotificationCenter.default.post(notification)
     }
