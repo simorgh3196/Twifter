@@ -205,7 +205,7 @@ public struct GetStatusesShow: RestApiRequest {
         return "/statuses/show/\(id).json"
     }
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "trim_user": trimUser,
             "include_my_retweet": includeMyRetweet,
@@ -233,7 +233,7 @@ public struct GetStatusesUserTimeline: RestApiRequest {
     public let method: HTTPMethod = .get
     public let path = "/statuses/user_timeline.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "user_id": userId,
             "screen_name": screenName,
@@ -274,7 +274,7 @@ public struct PostStatusesDestroy: RestApiRequest {
         return "/statuses/retweets/\(id).json"
     }
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "id": id,
             "trim_user": trimUser
@@ -299,7 +299,7 @@ public struct PostStatusesRetweet: RestApiRequest {
         return "/statuses/retweets/\(id).json"
     }
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "id": id,
             "trim_user": trimUser
@@ -324,7 +324,7 @@ public struct PostStatusesUnretweet: RestApiRequest {
         return "/statuses/unretweet/\(id).json"
     }
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "id": id,
             "trim_user": trimUser
@@ -347,7 +347,7 @@ public struct PostStatusesUpdate: RestApiRequest {
     public let method: HTTPMethod = .post
     public var path = "/statuses/update.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "status": status,
             "in_reply_to_status_id": inReplyToStatusId,

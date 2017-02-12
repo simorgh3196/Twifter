@@ -21,7 +21,7 @@ public struct GetApplicationRateLimitStatus: RestApiRequest {
     public let method: HTTPMethod = .get
     public let path = "/application/rate_limit_status.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "resources": resources?.rawValue
             ])

@@ -78,9 +78,7 @@ extension TwifterRequest {
         return sha1.base64EncodedString()
     }
 
-}
-
-func query(from dictionary: [String: Any?]) -> [String: Any] {
+    func query(from dictionary: [String: Any?]) -> [String: Any] {
         var query = [String: Any]()
         dictionary.forEach { key, value in
             if let v = value {
@@ -89,4 +87,6 @@ func query(from dictionary: [String: Any?]) -> [String: Any] {
         }
 
         return query
+    }
+
 }

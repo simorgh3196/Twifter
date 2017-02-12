@@ -38,7 +38,7 @@ public struct GetAccountVerifyCredentials: RestApiRequest {
     public let method: HTTPMethod = .get
     public let path = "/account/verify_credentials.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "include_entities": includeEntities,
             "skip_status": skipStatus,
@@ -77,7 +77,7 @@ public struct PostAccountSettings: RestApiRequest {
     public let method: HTTPMethod = .post
     public let path = "/account/settings.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "sleep_time_enabled": sleepTimeEnabled,
             "start_sleep_time": startSleepTime,
@@ -107,7 +107,7 @@ public struct PostAccountUpdateProfile: RestApiRequest {
     public let method: HTTPMethod = .post
     public let path = "/account/update_profile.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "name": name,
             "url": url,
@@ -139,7 +139,7 @@ public struct PostAccountUpdateProfileBackgroundImage: RestApiRequest {
     public let method: HTTPMethod = .post
     public let path = "/account/update_profile_background_image.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "image": image,
             "tile": tile,
@@ -167,7 +167,7 @@ public struct PostAccountUpdateProfileBanner: RestApiRequest {
     public let method: HTTPMethod = .post
     public let path = "/account/update_profile_background_image.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "banner": banner,
             "width": width,
@@ -195,7 +195,7 @@ public struct PostAccountUpdateProfileImage: RestApiRequest {
     public let method: HTTPMethod = .post
     public let path = "/account/update_profile_image.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "image": image,
             "include_entities": includeEntities,
