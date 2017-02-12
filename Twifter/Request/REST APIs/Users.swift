@@ -18,10 +18,22 @@ import APIKit
  - Remark: Rate limit: 15 / 15 min
  - Remark: Rate limit: (user) 180 / 15 min | (app) 60 / 15 min
  */
-public struct GetUsersLookup {
-    let screenName: String?
-    let userId: String?
-    let include_entities: Bool?
+public struct GetUsersLookup: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/users/lookup.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "screen_name": screenName,
+            "user_id": userId,
+            "unclude_entities": includeEntities,
+            ])
+    }
+
+    public let credential: Credential
+    public let screenName: String?
+    public let userId: String?
+    public let includeEntities: Bool?
 }
 
 
@@ -33,9 +45,20 @@ public struct GetUsersLookup {
 
  - Remark: Rate limit: 180 / 15 min
  */
-public struct GetUsersProfileBanner {
-    let userId: String?
-    let screenName: String?
+public struct GetUsersProfileBanner: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/users/profile_banner.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "user_id": screenName,
+            "screen_name": userId,
+            ])
+    }
+
+    public let credential: Credential
+    public let userId: String?
+    public let screenName: String?
 }
 
 
@@ -47,11 +70,24 @@ public struct GetUsersProfileBanner {
 
  - Remark: Rate limit: 180 / 15 min
  */
-public struct GetUsersSearch {
-    let q: String
-    let page: Int?
-    let count: Int?
-    let includeEntities: Bool?
+public struct GetUsersSearch: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/users/search.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "q": q,
+            "page": page,
+            "count": count,
+            "include_entities": includeEntities,
+            ])
+    }
+
+    public let credential: Credential
+    public let q: String
+    public let page: Int?
+    public let count: Int?
+    public let includeEntities: Bool?
 }
 
 
@@ -63,10 +99,22 @@ public struct GetUsersSearch {
 
  - Remark: Rate limit: 180 / 15 min
  */
-public struct GetUsersShow {
-    let userId: String?
-    let screenName: String?
-    let includeEntities: Bool?
+public struct GetUsersShow: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/users/show.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "user_id": screenName,
+            "screen_name": userId,
+            "include_entities": includeEntities,
+            ])
+    }
+
+    public let credential: Credential
+    public let userId: String?
+    public let screenName: String?
+    public let includeEntities: Bool?
 }
 
 
@@ -78,9 +126,20 @@ public struct GetUsersShow {
 
  - Remark: Rate limit: 15 / 15 min
  */
-public struct GetUsersSuggestions {
-    let slug: String?
-    let lang: String?
+public struct GetUsersSuggestions: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public let path = "/users/suggestions.json"
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "slug": slug,
+            "lang": lang,
+            ])
+    }
+
+    public let credential: Credential
+    public let slug: String?
+    public let lang: String?
 }
 
 
@@ -92,6 +151,18 @@ public struct GetUsersSuggestions {
 
  - Remark: Rate limit: 15 / 15 min
  */
-public struct GetUsersSuggestionsMembers {
-    let slug: String
+public struct GetUsersSuggestionsMembers: RestApiRequest {
+    public let method: HTTPMethod = .get
+    public var path: String {
+        return "/users/suggestions/\(slug)/members.json"
+    }
+
+    public var queryParameters: [String: Any] {
+        return query(from: [
+            "slug": slug,
+            ])
+    }
+
+    public let credential: Credential
+    public let slug: String
 }
