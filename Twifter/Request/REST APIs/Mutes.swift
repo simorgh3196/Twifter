@@ -15,7 +15,7 @@ import APIKit
  Returns an array of numeric user ids the authenticating user has muted.
  [Read more ...](https://dev.twitter.com/rest/reference/get/mutes/users/ids)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetMutesUsersIds {
     let cursor: Int?
@@ -28,7 +28,7 @@ public struct GetMutesUsersIds {
  Returns an array of user objects the authenticating user has muted.
  [Read more ...](https://dev.twitter.com/rest/reference/get/mutes/users/list)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetMutesUsersList {
     let cursor: Int?

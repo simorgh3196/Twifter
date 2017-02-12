@@ -43,7 +43,7 @@ public struct GetDirectMessages {
 
  - Important:
         This method requires an access token with RWD (read, write & direct message) permissions. Consult The Application Permission Model for more information.
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetDirectMessagesSent {
     let sinceId: String?
@@ -65,7 +65,7 @@ public struct GetDirectMessagesSent {
  - Important:
         This method requires an access token with RWD (read, write & direct message) permissions.
         Consult The Application Permission Model for more information.
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetDirectMessagesMessages {
     let id: String

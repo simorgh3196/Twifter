@@ -15,7 +15,7 @@ import APIKit
  Returns the current configuration used by Twitter including twitter.com slugs which are not usernames, maximum photo resolutions, and t.co shortened URL length.
  [Read more ...](https://dev.twitter.com/rest/reference/get/help/configuration)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetHelpConfiguration {
 }
@@ -27,7 +27,7 @@ public struct GetHelpConfiguration {
  Returns the list of languages supported by Twitter along with the language code supported by Twitter.
  [Read more ...](https://dev.twitter.com/rest/reference/get/help/languages)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetHelpLanguages {
 }
@@ -39,7 +39,7 @@ public struct GetHelpLanguages {
  Returns [Twitter’s Privacy Policy](https://twitter.com/privacy).
  [Read more ...](https://dev.twitter.com/rest/reference/get/help/privacy)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetHelpPrivacy {
 }
@@ -50,7 +50,7 @@ public struct GetHelpPrivacy {
 
  Returns the Twitter Terms of Service. Note: these are not the same as the Developer Policy.
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetHelpTos {
 }

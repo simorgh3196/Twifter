@@ -15,7 +15,7 @@ import APIKit
  Returns the current rate limits for methods belonging to the specified resource families.
  [Read more ...](https://dev.twitter.com/rest/reference/get/application/rate_limit_status)
 
- - Remark: Rate limit: 180 / 15 min
+ __Rate limit__: 180 / 15 min
  */
 public struct GetApplicationRateLimitStatus: RestApiRequest {
     public let method: HTTPMethod = .get

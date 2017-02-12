@@ -15,7 +15,7 @@ import APIKit
  Returns a cursored collection of user IDs for every user following the specified user.
  [Read more ...](https://dev.twitter.com/rest/reference/get/favorites/ids)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetFollowersIds {
     let userId: String?
@@ -32,7 +32,7 @@ public struct GetFollowersIds {
  Returns a cursored collection of user objects for users following the specified user.
  [Read more ...](https://dev.twitter.com/rest/reference/get/followers/list)
 
- - Remark: Rate limit: (user auth) 15 / 15 min | (app auth) 30 / 15 min
+ __Rate limit__: (user auth) 15 / 15 min | (app auth) 30 / 15 min
  */
 public struct GetFollowersList {
     let userId: String?

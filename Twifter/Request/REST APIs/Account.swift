@@ -16,7 +16,7 @@ import APIKit
  Returns settings (including current trend, geo and sleep time information) for the authenticating user.
  [Read more ...](https://dev.twitter.com/rest/reference/get/account/settings)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetAccountSettings: RestApiRequest {
     public let method: HTTPMethod = .get
@@ -32,7 +32,7 @@ public struct GetAccountSettings: RestApiRequest {
  Returns an HTTP 200 OK response code and a representation of the requesting user if authentication was successful; returns a 401 status code and an error message if not. Use this method to test if supplied user credentials are valid.
  [Read more ...](https://dev.twitter.com/rest/reference/get/account/verify_credentials)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetAccountVerifyCredentials: RestApiRequest {
     public let method: HTTPMethod = .get
