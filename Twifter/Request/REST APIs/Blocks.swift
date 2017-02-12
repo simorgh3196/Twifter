@@ -25,7 +25,7 @@ public struct GetBlocksIds: RestApiRequest {
     public let method: HTTPMethod = .get
     public let path = "/blocks/ids.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "stringify_ids": stringifyIds,
             "cursor": cursor
@@ -56,7 +56,7 @@ public struct GetBlocksList: RestApiRequest {
     public let method: HTTPMethod = .get
     public let path = "/blocks/list.json"
 
-    public var queryParameters: [String : Any] {
+    public var queryParameters: [String: Any] {
         return query(from: [
             "include_entities": includeEntities,
             "skip_status": skipStatus,
