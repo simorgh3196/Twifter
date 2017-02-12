@@ -15,7 +15,7 @@ import APIKit
  Returns all the information about a known [place](https://dev.twitter.com/overview/api/places).
  [Read more ...](https://dev.twitter.com/rest/reference/get/geo/id/place_id)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetGeoId {
     let place_id: String
@@ -28,7 +28,7 @@ public struct GetGeoId {
  Given a latitude and a longitude, searches for up to 20 places that can be used as a place_id when updating a status.
  [Read more ...](https://dev.twitter.com/rest/reference/get/geo/reverse_geocode)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetGeoReverseGeocode {
     let lat: Double
@@ -46,7 +46,7 @@ public struct GetGeoReverseGeocode {
  Search for places that can be attached to a statuses/update.
  [Read more ...](https://dev.twitter.com/rest/reference/get/geo/search)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetGeoSearch {
     let lat: Double?

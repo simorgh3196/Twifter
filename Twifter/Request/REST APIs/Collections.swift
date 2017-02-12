@@ -15,7 +15,7 @@ import APIKit
  Retrieve the identified Collection, presented as a list of the Tweets curated within.
  [Read more ...](https://dev.twitter.com/rest/reference/get/collections/entries)
 
- - Remark: Rate limit: 1000 / 15 min
+ __Rate limit__: 1000 / 15 min
  */
 public struct GetCollectionsEntries {
     let id: String
@@ -31,7 +31,7 @@ public struct GetCollectionsEntries {
  Find Collections created by a specific user or containing a specific curated Tweet.
  [Read more ...](https://dev.twitter.com/rest/reference/get/collections/list)
 
- - Remark: Rate limit: 1000 / 15 min
+ __Rate limit__: 1000 / 15 min
  */
 public struct GetCollectionsList {
     let userId: String
@@ -48,7 +48,7 @@ public struct GetCollectionsList {
  Retrieve information associated with a specific Collection.
  [Read more ...](https://dev.twitter.com/rest/reference/get/collections/show)
 
- - Remark: Rate limit: 1000 / 15 min
+ __Rate limit__: 1000 / 15 min
  */
 public struct GetCollectionsShow {
     let id: String

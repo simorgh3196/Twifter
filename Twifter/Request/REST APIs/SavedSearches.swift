@@ -15,7 +15,7 @@ import APIKit
  Returns the authenticated user’s saved search queries.
  [Read more ...](https://dev.twitter.com/rest/reference/get/saved_searches/list)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetSavedSearchesList {
 }
@@ -27,7 +27,7 @@ public struct GetSavedSearchesList {
  Retrieve the information for the saved search represented by the given id. The authenticating user must be the owner of saved search ID being requested.
  [Read more ...](https://dev.twitter.com/rest/reference/get/saved_searches/show/id)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetSavedSearchesShow {
     let id: String

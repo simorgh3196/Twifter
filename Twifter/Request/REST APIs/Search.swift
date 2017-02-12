@@ -15,7 +15,7 @@ import APIKit
  Returns a collection of relevant Tweets matching a specified query.
  [Read more ...](https://dev.twitter.com/rest/reference/get/search/tweets)
 
- - Remark: Rate limit: (user) 180 / 15 min | (app) 450 / 15 min
+ __Rate limit__: (user) 180 / 15 min | (app) 450 / 15 min
  */
 public struct GetSearchTweets {
     let q: String

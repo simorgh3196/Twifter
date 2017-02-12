@@ -15,7 +15,7 @@ import APIKit
  Returns the 20 most recent Tweets favorited by the authenticating or specified user.
  [Read more ...](https://dev.twitter.com/rest/reference/get/favorites/list)
 
- - Remark: Rate limit: 15 / 15 min
+ __Rate limit__: 15 / 15 min
  */
 public struct GetFavoritesList {
     let userId: String?
