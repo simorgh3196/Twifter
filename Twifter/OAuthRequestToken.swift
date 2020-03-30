@@ -11,5 +11,11 @@ import Foundation
 public struct OAuthRequestToken: Decodable, Equatable, Hashable {
     public let oauthToken: String
     public let oauthTokenSecret: String
-    public let oauthCallbackConfirmed: String
+    public let oauthCallbackConfirmed: Bool
+
+    public init(oauthToken: String, oauthTokenSecret: String, oauthCallbackConfirmed: Bool) {
+        self.oauthToken = oauthToken
+        self.oauthTokenSecret = oauthTokenSecret
+        self.oauthCallbackConfirmed = oauthCallbackConfirmed
+    }
 }

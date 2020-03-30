@@ -34,7 +34,7 @@ open class LoginManager: NSObject {
     private var openURLHandler: ((URL, [UIApplication.OpenURLOptionsKey: Any]) -> Void)?
     private var authenticationSession: Any?
 
-    init(api: API, callbackURL: URL) {
+    public init(api: API, callbackURL: URL) {
         self.api = api
         self.callbackURL = callbackURL
     }

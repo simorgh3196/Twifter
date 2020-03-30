@@ -11,4 +11,9 @@ import Foundation
 public struct AccessToken: Decodable, Equatable, Hashable {
     public let oauthToken: String
     public let oauthTokenSecret: String
+
+    public init(oauthToken: String, oauthTokenSecret: String) {
+        self.oauthToken = oauthToken
+        self.oauthTokenSecret = oauthTokenSecret
+    }
 }

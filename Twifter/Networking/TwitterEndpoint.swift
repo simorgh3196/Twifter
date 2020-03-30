@@ -20,9 +20,27 @@ public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Re
 
     public var queryParameters: [String: String]? = nil
 
-    public var bodyParameters: [String: Any]? = nil
+    public var bodyParameters: [String: String]? = nil
 
     public var decoder: Decoder = .default
+
+    public init(
+        baseURL: URL,
+        path: String,
+        method: HTTPMethod,
+        headerFields: [String: String]? = nil,
+        queryParameters: [String: String]? = nil,
+        bodyParameters: [String: String]? = nil,
+        decoder: Decoder = .default
+    ) {
+        self.baseURL = baseURL
+        self.path = path
+        self.method = method
+        self.headerFields = headerFields
+        self.queryParameters = queryParameters
+        self.bodyParameters = bodyParameters
+        self.decoder = decoder
+    }
 
     public func decodeResponse(data: Data,
                                urlResponse: HTTPURLResponse,
