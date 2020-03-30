@@ -8,9 +8,7 @@
 
 import Foundation
 
-typealias TwitterCredential = Credential
-
 public struct Credential: Equatable, Hashable {
-    let consumerKey: String
-    let consumerSecret: String
+    public let consumerKey: String
+    public let consumerSecret: String
 }

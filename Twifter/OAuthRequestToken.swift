@@ -9,7 +9,7 @@
 import Foundation
 
 public struct OAuthRequestToken: Decodable, Equatable, Hashable {
-    let oauthToken: String
-    let oauthTokenSecret: String
-    let oauthCallbackConfirmed: String
+    public let oauthToken: String
+    public let oauthTokenSecret: String
+    public let oauthCallbackConfirmed: String
 }

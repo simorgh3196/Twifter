@@ -9,6 +9,6 @@
 import Foundation
 
 public struct AccessToken: Decodable, Equatable, Hashable {
-    let oauthToken: String
-    let oauthTokenSecret: String
+    public let oauthToken: String
+    public let oauthTokenSecret: String
 }
