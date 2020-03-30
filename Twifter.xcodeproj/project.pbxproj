@@ -7,26 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1064EF6242C4F7C00E5ADE6 /* TwifterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1064EF5242C4F7C00E5ADE6 /* TwifterError.swift */; };
+		B1064EFB242C525800E5ADE6 /* OAuthSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1064EFA242C525800E5ADE6 /* OAuthSigner.swift */; };
 		B12BEE27242B0EEC00907E75 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEE1E242B0EEC00907E75 /* API.framework */; };
 		B12BEE2C242B0EEC00907E75 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE2B242B0EEC00907E75 /* APITests.swift */; };
 		B12BEE2E242B0EEC00907E75 /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = B12BEE20242B0EEC00907E75 /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B12BEE58242B10C800907E75 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEE4F242B10C800907E75 /* Core.framework */; };
-		B12BEE5D242B10C800907E75 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE5C242B10C800907E75 /* CoreTests.swift */; };
 		B12BEE5F242B10C800907E75 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = B12BEE51242B10C800907E75 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B12BEE6B242B1BEB00907E75 /* Twifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE6A242B1BEB00907E75 /* Twifter.swift */; };
-		B12BEE6C242B20D100907E75 /* Twifter+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE48242B0FD100907E75 /* Twifter+Login.swift */; };
 		B12BEE74242B211700907E75 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE73242B211700907E75 /* ShareViewController.swift */; };
 		B12BEE77242B211700907E75 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12BEE75242B211700907E75 /* MainInterface.storyboard */; };
 		B12BEE8A242B218F00907E75 /* Twifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEE81242B218F00907E75 /* Twifter.framework */; };
 		B12BEE8F242B218F00907E75 /* TwifterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE8E242B218F00907E75 /* TwifterTests.swift */; };
 		B12BEE91242B218F00907E75 /* Twifter.h in Headers */ = {isa = PBXBuildFile; fileRef = B12BEE83242B218F00907E75 /* Twifter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B12BEE9F242B21FA00907E75 /* TwitterCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE9E242B21FA00907E75 /* TwitterCredential.swift */; };
+		B12BEE9F242B21FA00907E75 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEE9E242B21FA00907E75 /* Credential.swift */; };
 		B12BEEA0242B22A200907E75 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF8242B0CEB00907E75 /* Nimble.framework */; };
 		B12BEEA1242B22A200907E75 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF7242B0CEB00907E75 /* Quick.framework */; };
-		B12BEEA2242B22A500907E75 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF8242B0CEB00907E75 /* Nimble.framework */; };
-		B12BEEA3242B22A500907E75 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF7242B0CEB00907E75 /* Quick.framework */; };
 		B12BEEA4242B22A800907E75 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF8242B0CEB00907E75 /* Nimble.framework */; };
 		B12BEEA5242B22A800907E75 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF7242B0CEB00907E75 /* Quick.framework */; };
+		B12BEEAB242C4B8500907E75 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BEEAA242C4B8500907E75 /* HMAC.swift */; };
+		B190874D242C655B00F38A39 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190874C242C655B00F38A39 /* Request.swift */; };
+		B190874F242C6A8800F38A39 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190874E242C6A8800F38A39 /* HTTPMethod.swift */; };
+		B1908751242C6B9100F38A39 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1908750242C6B9100F38A39 /* API.swift */; };
+		B1908753242C948A00F38A39 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1908752242C948A00F38A39 /* AccessToken.swift */; };
+		B1908757242CA7E600F38A39 /* CancellableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1908756242CA7E600F38A39 /* CancellableTask.swift */; };
+		B190875A242CAB6A00F38A39 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1908759242CAB6A00F38A39 /* String+.swift */; };
+		B190875D242CB27600F38A39 /* TwitterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190875C242CB27600F38A39 /* TwitterEndpoint.swift */; };
+		B1908762242CBB9900F38A39 /* OAuthRequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1908761242CBB9900F38A39 /* OAuthRequestToken.swift */; };
+		B1908764242CCC3600F38A39 /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1908763242CCC3600F38A39 /* AuthenticationEndpoint.swift */; };
+		B1908767242D989900F38A39 /* Nimble.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF8242B0CEB00907E75 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1908768242D989900F38A39 /* Quick.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF7242B0CEB00907E75 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1908769242D98AC00F38A39 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF8242B0CEB00907E75 /* Nimble.framework */; };
+		B190876A242D98AC00F38A39 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF7242B0CEB00907E75 /* Quick.framework */; };
+		B19088372431C14500F38A39 /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19088362431C14500F38A39 /* ResponseDecoder.swift */; };
+		B19088392431C80A00F38A39 /* OAuthSignerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19088382431C80A00F38A39 /* OAuthSignerSpec.swift */; };
+		B190883B2431CD7500F38A39 /* TwitterAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190883A2431CD7500F38A39 /* TwitterAPIError.swift */; };
+		B190883F2431F67A00F38A39 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190883E2431F67A00F38A39 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +97,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B1908766242D987100F38A39 /* Copy Carthage Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B1908767242D989900F38A39 /* Nimble.framework in Copy Carthage Frameworks */,
+				B1908768242D989900F38A39 /* Quick.framework in Copy Carthage Frameworks */,
+			);
+			name = "Copy Carthage Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B1064EF5242C4F7C00E5ADE6 /* TwifterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwifterError.swift; sourceTree = "<group>"; };
+		B1064EFA242C525800E5ADE6 /* OAuthSigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthSigner.swift; sourceTree = "<group>"; };
 		B12BEDF7242B0CEB00907E75 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		B12BEDF8242B0CEB00907E75 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		B12BEE1E242B0EEC00907E75 /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,12 +123,10 @@
 		B12BEE26242B0EEC00907E75 /* APITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12BEE2B242B0EEC00907E75 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		B12BEE2D242B0EEC00907E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B12BEE48242B0FD100907E75 /* Twifter+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Twifter+Login.swift"; sourceTree = "<group>"; };
 		B12BEE4F242B10C800907E75 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12BEE51242B10C800907E75 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		B12BEE52242B10C800907E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12BEE57242B10C800907E75 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B12BEE5C242B10C800907E75 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		B12BEE5E242B10C800907E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12BEE6A242B1BEB00907E75 /* Twifter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twifter.swift; sourceTree = "<group>"; };
 		B12BEE71242B211700907E75 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +139,21 @@
 		B12BEE89242B218F00907E75 /* TwifterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwifterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12BEE8E242B218F00907E75 /* TwifterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwifterTests.swift; sourceTree = "<group>"; };
 		B12BEE90242B218F00907E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B12BEE9E242B21FA00907E75 /* TwitterCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCredential.swift; sourceTree = "<group>"; };
+		B12BEE9E242B21FA00907E75 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		B12BEEAA242C4B8500907E75 /* HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
+		B190874C242C655B00F38A39 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		B190874E242C6A8800F38A39 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		B1908750242C6B9100F38A39 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B1908752242C948A00F38A39 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		B1908756242CA7E600F38A39 /* CancellableTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableTask.swift; sourceTree = "<group>"; };
+		B1908759242CAB6A00F38A39 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		B190875C242CB27600F38A39 /* TwitterEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterEndpoint.swift; sourceTree = "<group>"; };
+		B1908761242CBB9900F38A39 /* OAuthRequestToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthRequestToken.swift; sourceTree = "<group>"; };
+		B1908763242CCC3600F38A39 /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
+		B19088362431C14500F38A39 /* ResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
+		B19088382431C80A00F38A39 /* OAuthSignerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthSignerSpec.swift; sourceTree = "<group>"; };
+		B190883A2431CD7500F38A39 /* TwitterAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPIError.swift; sourceTree = "<group>"; };
+		B190883E2431F67A00F38A39 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B12BEE58242B10C800907E75 /* Core.framework in Frameworks */,
-				B12BEEA2242B22A500907E75 /* Nimble.framework in Frameworks */,
-				B12BEEA3242B22A500907E75 /* Quick.framework in Frameworks */,
+				B1908769242D98AC00F38A39 /* Nimble.framework in Frameworks */,
+				B190876A242D98AC00F38A39 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +218,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1064EF8242C515F00E5ADE6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B1908750242C6B9100F38A39 /* API.swift */,
+				B1908756242CA7E600F38A39 /* CancellableTask.swift */,
+				B190874E242C6A8800F38A39 /* HTTPMethod.swift */,
+				B1064EFA242C525800E5ADE6 /* OAuthSigner.swift */,
+				B190874C242C655B00F38A39 /* Request.swift */,
+				B190883A2431CD7500F38A39 /* TwitterAPIError.swift */,
+				B190875C242CB27600F38A39 /* TwitterEndpoint.swift */,
+				B19088362431C14500F38A39 /* ResponseDecoder.swift */,
+				B1908765242CCED600F38A39 /* Endpoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B1064EF9242C516D00E5ADE6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B12BEEAA242C4B8500907E75 /* HMAC.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		B12BEDD2242B0BE100907E75 = {
 			isa = PBXGroup;
 			children = (
@@ -234,9 +303,15 @@
 			children = (
 				B12BEE51242B10C800907E75 /* Core.h */,
 				B12BEE52242B10C800907E75 /* Info.plist */,
+				B1908752242C948A00F38A39 /* AccessToken.swift */,
+				B12BEE9E242B21FA00907E75 /* Credential.swift */,
+				B190883E2431F67A00F38A39 /* LoginManager.swift */,
+				B1908761242CBB9900F38A39 /* OAuthRequestToken.swift */,
 				B12BEE6A242B1BEB00907E75 /* Twifter.swift */,
-				B12BEE9E242B21FA00907E75 /* TwitterCredential.swift */,
-				B12BEE48242B0FD100907E75 /* Twifter+Login.swift */,
+				B1064EF5242C4F7C00E5ADE6 /* TwifterError.swift */,
+				B1064EF8242C515F00E5ADE6 /* Networking */,
+				B1064EF9242C516D00E5ADE6 /* Util */,
+				B1908758242CAB5300F38A39 /* Extension */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -244,7 +319,7 @@
 		B12BEE5B242B10C800907E75 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				B12BEE5C242B10C800907E75 /* CoreTests.swift */,
+				B19088382431C80A00F38A39 /* OAuthSignerSpec.swift */,
 				B12BEE5E242B10C800907E75 /* Info.plist */,
 			);
 			path = CoreTests;
@@ -276,6 +351,22 @@
 				B12BEE90242B218F00907E75 /* Info.plist */,
 			);
 			path = TwifterTests;
+			sourceTree = "<group>";
+		};
+		B1908758242CAB5300F38A39 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B1908759242CAB6A00F38A39 /* String+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B1908765242CCED600F38A39 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				B1908763242CCC3600F38A39 /* AuthenticationEndpoint.swift */,
+			);
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +461,7 @@
 				B12BEE53242B10C800907E75 /* Sources */,
 				B12BEE54242B10C800907E75 /* Frameworks */,
 				B12BEE55242B10C800907E75 /* Resources */,
+				B1908766242D987100F38A39 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -568,9 +660,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B190883B2431CD7500F38A39 /* TwitterAPIError.swift in Sources */,
+				B1908751242C6B9100F38A39 /* API.swift in Sources */,
 				B12BEE6B242B1BEB00907E75 /* Twifter.swift in Sources */,
-				B12BEE9F242B21FA00907E75 /* TwitterCredential.swift in Sources */,
-				B12BEE6C242B20D100907E75 /* Twifter+Login.swift in Sources */,
+				B1064EFB242C525800E5ADE6 /* OAuthSigner.swift in Sources */,
+				B190883F2431F67A00F38A39 /* LoginManager.swift in Sources */,
+				B1908764242CCC3600F38A39 /* AuthenticationEndpoint.swift in Sources */,
+				B19088372431C14500F38A39 /* ResponseDecoder.swift in Sources */,
+				B1064EF6242C4F7C00E5ADE6 /* TwifterError.swift in Sources */,
+				B12BEEAB242C4B8500907E75 /* HMAC.swift in Sources */,
+				B190875D242CB27600F38A39 /* TwitterEndpoint.swift in Sources */,
+				B190874F242C6A8800F38A39 /* HTTPMethod.swift in Sources */,
+				B190874D242C655B00F38A39 /* Request.swift in Sources */,
+				B1908757242CA7E600F38A39 /* CancellableTask.swift in Sources */,
+				B12BEE9F242B21FA00907E75 /* Credential.swift in Sources */,
+				B1908762242CBB9900F38A39 /* OAuthRequestToken.swift in Sources */,
+				B190875A242CAB6A00F38A39 /* String+.swift in Sources */,
+				B1908753242C948A00F38A39 /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,7 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B12BEE5D242B10C800907E75 /* CoreTests.swift in Sources */,
+				B19088392431C80A00F38A39 /* OAuthSignerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
