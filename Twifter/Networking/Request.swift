@@ -28,7 +28,7 @@ public protocol Request {
 
     var queryParameters: [String: String]? { get }
 
-    var bodyParameters: [String: Any]? { get }
+    var bodyParameters: [String: String]? { get }
 
     /// The cache policy for the request.
     var cachePolicy: URLRequest.CachePolicy { get }
@@ -54,7 +54,7 @@ public extension Request {
 
     var queryParameters: [String: String]? { nil }
 
-    var bodyParameters: [String: Any]? { nil }
+    var bodyParameters: [String: String]? { nil }
 
     var cachePolicy: URLRequest.CachePolicy { .useProtocolCachePolicy }
 
@@ -70,11 +70,11 @@ public extension Request {
         var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: timeoutInterval)
         request.httpMethod = method.value
         request.allHTTPHeaderFields = headerFields
-        request.httpBody = bodyParameters.flatMap { parameters in
-            let jsonObject = parameters.filter { !$0.key.contains("oauth_") }
-            guard !jsonObject.isEmpty else { return nil }
-            return try? JSONSerialization.data(withJSONObject: jsonObject)
-        }
+        request.httpBody = bodyParameters?
+            .filter { !$0.key.contains("oauth_callback") }
+            .map { $0.key.urlEncoded + "=" + "\($0.value)".urlEncoded }
+            .joined(separator: "&")
+            .data(using: .utf8)
 
         return request
     }

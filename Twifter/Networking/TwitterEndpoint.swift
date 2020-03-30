@@ -10,7 +10,7 @@ import Foundation
 
 public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Request {
 
-    public var baseURL: URL { URL(string: "https://api.twitter.com")! }
+    public var baseURL: URL
 
     public var path: String
 
