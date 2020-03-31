@@ -16,8 +16,4 @@ extension String {
         let customAllowedSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
         return addingPercentEncoding(withAllowedCharacters: customAllowedSet)!
     }
-
-    var urlQueryEncoded: String? {
-        addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-    }
 }
