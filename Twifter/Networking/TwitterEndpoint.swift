@@ -25,7 +25,7 @@ public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Re
     public var decoder: Decoder = .default
 
     public init(
-        baseURL: URL,
+        baseURL: TwitterBaseURL,
         path: String,
         method: HTTPMethod,
         headerFields: [String: String]? = nil,
@@ -33,7 +33,7 @@ public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Re
         bodyParameters: [String: String]? = nil,
         decoder: Decoder = .default
     ) {
-        self.baseURL = baseURL
+        self.baseURL = baseURL.url
         self.path = path
         self.method = method
         self.headerFields = headerFields

@@ -12,7 +12,7 @@ extension TwitterEndpoint {
 
     public static func postOAuthRequestToken(oauthCallbackURL: URL) -> TwitterOAuthEndpoint<OAuthRequestToken> {
         return .init(
-            baseURL: URL(string: "https://api.twitter.com")!,
+            baseURL: .oauth,
             path: "/oauth/request_token",
             method: .post,
             bodyParameters: [
@@ -23,7 +23,7 @@ extension TwitterEndpoint {
 
     public static func postOAuthAccessToken(oauthVerifier: String) -> TwitterOAuthEndpoint<AccessToken> {
         return .init(
-            baseURL: URL(string: "https://api.twitter.com")!,
+            baseURL: .oauth,
             path: "/oauth/access_token",
             method: .post,
             headerFields: [

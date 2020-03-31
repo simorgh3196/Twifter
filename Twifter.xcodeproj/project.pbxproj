@@ -17,6 +17,7 @@
 		B12BEEA1242B22A200907E75 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF7242B0CEB00907E75 /* Quick.framework */; };
 		B12BEEA4242B22A800907E75 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF8242B0CEB00907E75 /* Nimble.framework */; };
 		B12BEEA5242B22A800907E75 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12BEDF7242B0CEB00907E75 /* Quick.framework */; };
+		B1716C702432DDAA00940BE5 /* TwitterURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1716C6F2432DDAA00940BE5 /* TwitterURL.swift */; };
 		B1908892243202A600F38A39 /* TwifterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1064EF5242C4F7C00E5ADE6 /* TwifterError.swift */; };
 		B1908893243202A600F38A39 /* OAuthRequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1908761242CBB9900F38A39 /* OAuthRequestToken.swift */; };
 		B1908894243202A600F38A39 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190883E2431F67A00F38A39 /* LoginManager.swift */; };
@@ -128,6 +129,7 @@
 		B12BEE90242B218F00907E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12BEE9E242B21FA00907E75 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		B12BEEAA242C4B8500907E75 /* HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
+		B1716C6F2432DDAA00940BE5 /* TwitterURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterURL.swift; sourceTree = "<group>"; };
 		B190874C242C655B00F38A39 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		B190874E242C6A8800F38A39 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		B1908750242C6B9100F38A39 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				B190874C242C655B00F38A39 /* Request.swift */,
 				B190883A2431CD7500F38A39 /* TwitterAPIError.swift */,
 				B190875C242CB27600F38A39 /* TwitterEndpoint.swift */,
+				B1716C6F2432DDAA00940BE5 /* TwitterURL.swift */,
 				B19088362431C14500F38A39 /* ResponseDecoder.swift */,
 				B1908765242CCED600F38A39 /* Endpoint */,
 			);
@@ -552,6 +555,7 @@
 				B19088A52432039400F38A39 /* TwitterEndpoint.swift in Sources */,
 				B1908895243202A600F38A39 /* Twifter.swift in Sources */,
 				B19088A42432039400F38A39 /* TwitterAPIError.swift in Sources */,
+				B1716C702432DDAA00940BE5 /* TwitterURL.swift in Sources */,
 				B1908893243202A600F38A39 /* OAuthRequestToken.swift in Sources */,
 				B19088A32432039400F38A39 /* Request.swift in Sources */,
 				B19088A62432039400F38A39 /* ResponseDecoder.swift in Sources */,
