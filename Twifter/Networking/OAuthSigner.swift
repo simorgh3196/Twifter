@@ -20,10 +20,17 @@ public struct OAuthSigner {
     private let timestampGenerator: (() -> TimeInterval)
     private let nonceGenerator: (() -> String)
 
-    public init(credential: Credential,
-                accessToken: AccessToken?,
-                timestampGenerator: @escaping (() -> TimeInterval) = { Date().timeIntervalSince1970 },
-                nonceGenerator: @escaping (() -> String) = { UUID().uuidString }) {
+    public init(credential: Credential, accessToken: AccessToken?) {
+        self.credential = credential
+        self.accessToken = accessToken
+        self.timestampGenerator = { Date().timeIntervalSince1970 }
+        self.nonceGenerator = { UUID().uuidString }
+    }
+
+    init(credential: Credential,
+         accessToken: AccessToken?,
+         timestampGenerator: @escaping (() -> TimeInterval),
+         nonceGenerator: @escaping (() -> String)) {
         self.credential = credential
         self.accessToken = accessToken
         self.timestampGenerator = timestampGenerator
