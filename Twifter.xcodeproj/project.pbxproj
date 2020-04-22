@@ -207,12 +207,12 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		B1064EF9242C516D00E5ADE6 /* Util */ = {
+		B1064EF9242C516D00E5ADE6 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
 				B12BEEAA242C4B8500907E75 /* HMAC.swift */,
 			);
-			path = Util;
+			path = Crypto;
 			sourceTree = "<group>";
 		};
 		B12BEDD2242B0BE100907E75 = {
@@ -288,7 +288,7 @@
 				B12BEE6A242B1BEB00907E75 /* Twifter.swift */,
 				B1064EF5242C4F7C00E5ADE6 /* TwifterError.swift */,
 				B1064EF8242C515F00E5ADE6 /* Networking */,
-				B1064EF9242C516D00E5ADE6 /* Util */,
+				B1064EF9242C516D00E5ADE6 /* Crypto */,
 				B1908758242CAB5300F38A39 /* Extension */,
 			);
 			path = Twifter;
