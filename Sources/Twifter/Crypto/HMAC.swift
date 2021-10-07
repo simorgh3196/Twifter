@@ -7,9 +7,9 @@
 //
 
 import CommonCrypto
+import Foundation
 
 struct HMAC {
-
     let base: String
 
     init(_ base: String) {

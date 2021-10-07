@@ -9,7 +9,6 @@
 import Foundation
 
 public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Request {
-
     public var baseURL: URL
 
     public var path: String
@@ -55,7 +54,6 @@ public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Re
 }
 
 extension API {
-
     @discardableResult
     open func call<Response, Decoder>(_ endpoint: TwitterEndpoint<Response, Decoder>,
                                       completionHandler: @escaping CompletionHandler<Response>) -> CancellableTask {
