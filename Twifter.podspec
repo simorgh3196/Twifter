@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
   s.author           = { "Tomoya Hayakawa" => "simorgh3196@gmail.com" }
   s.source           = { :git => "https://github.com/simorgh3196/Twifter.git", :tag => "#{s.version}" }
   s.social_media_url = 'https://twitter.com/simorgh3196'
-  s.platform         = :ios, '10.0'
+  s.platform         = :ios, '11.0'
   s.requires_arc     = true
 
-  s.source_files  = 'Source/**/*.{swift}'
-  s.resources     = "Source/**/*"
+  s.source_files  = 'Sources/Twifter/**/*.{swift}'
+  s.resources     = "Sources/Twifter/**/*"
 end
