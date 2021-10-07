@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Twifter"
-  s.version          = "0.0.2"
+  s.version          = "0.2.0"
   s.summary          = "pure-Swift library for Twitter client"
   s.homepage         = "https://github.com/simorgh3196/Twifter"
   s.license          = 'MIT'
