@@ -9,7 +9,6 @@
 import UIKit
 
 open class Twifter {
-
     public let api: API
     public let loginManager: LoginManager
 

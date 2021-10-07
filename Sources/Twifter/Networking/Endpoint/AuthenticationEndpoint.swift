@@ -9,7 +9,6 @@
 import Foundation
 
 extension TwitterEndpoint {
-
     public static func postOAuthRequestToken(oauthCallbackURL: URL) -> TwitterOAuthEndpoint<OAuthRequestToken> {
         return .init(
             baseURL: .oauth,

@@ -7,16 +7,16 @@
 //
 
 import CommonCrypto
+import Foundation
 
 struct HMAC {
-
     let base: String
 
     init(_ base: String) {
         self.base = base
     }
 
-    func data(withKey key: String, algorithm: HMACAlgorithm) -> Data {
+    func data(withKey key: String, algorithm: DigestAlgorithm) -> Data {
         let cKey = key.cString(using: .utf8)
         let cData = base.cString(using: .utf8)
         var result = [CUnsignedChar](repeating: 0, count: algorithm.digestLength)
@@ -27,7 +27,7 @@ struct HMAC {
     }
 }
 
-enum HMACAlgorithm {
+enum DigestAlgorithm {
     case md5, sha1, sha224, sha256, sha384, sha512
 
     fileprivate var digestLength: Int {

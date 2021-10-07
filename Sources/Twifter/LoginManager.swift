@@ -142,7 +142,7 @@ open class LoginManager: NSObject {
             }
             authenticationSession.start()
             self.authenticationSession = authenticationSession
-        } else { // if iOS 11.x
+        } else if #available(iOS 11.0, *) {
             let authenticationSession = SFAuthenticationSession(url: authURL,
                                                                 callbackURLScheme: self.callbackURL.scheme,
                                                                 completionHandler: completionHandler)

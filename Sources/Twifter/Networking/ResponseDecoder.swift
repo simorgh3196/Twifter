@@ -24,7 +24,6 @@ private let jsonDecoderForTwitter: JSONDecoder = {
 public typealias TwitterOAuthEndpoint<Response: Decodable> = TwitterEndpoint<Response, TwitterOAuthResponseDecoder>
 
 public struct TwitterOAuthResponseDecoder: ResponseDecoder {
-
     public static var `default` = TwitterOAuthResponseDecoder()
 
     public func decode<Response: Decodable>(as type: Response.Type,
@@ -51,7 +50,6 @@ public struct TwitterOAuthResponseDecoder: ResponseDecoder {
 public typealias TwitterAPIEndpoint<Response: Decodable> = TwitterEndpoint<Response, TwitterJSONResponseDecoder>
 
 public struct TwitterJSONResponseDecoder: ResponseDecoder {
-
     public static var `default` = TwitterJSONResponseDecoder()
 
     public func decode<Response: Decodable>(as type: Response.Type,
