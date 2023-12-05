@@ -18,9 +18,9 @@ public enum TwifterError: LocalizedError {
     }
 
     public enum LoginErrorReason {
-        case doNotHaveTwitterApp
         case cannotGetCallbackURL
         case invalidCallbackURL
+        case invalidAccessToken
         case catchError(Error)
         case cancelled
     }

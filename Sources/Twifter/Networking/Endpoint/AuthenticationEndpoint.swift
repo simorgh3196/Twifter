@@ -9,10 +9,10 @@
 import Foundation
 
 extension TwitterEndpoint {
-    public static func postOAuthRequestToken(oauthCallbackURL: URL) -> TwitterOAuthEndpoint<OAuthRequestToken> {
-        return .init(
-            baseURL: .oauth,
-            path: "/oauth/request_token",
+    public static func postOAuthRequestToken(oauthCallbackURL: URL) -> TwitterEndpoint<AccessToken> {
+        .init(
+            baseURL: .oauth1,
+            path: "/request_token",
             method: .post,
             bodyParameters: [
                 "oauth_callback": oauthCallbackURL.absoluteString
@@ -20,10 +20,10 @@ extension TwitterEndpoint {
         )
     }
 
-    public static func postOAuthAccessToken(oauthVerifier: String) -> TwitterOAuthEndpoint<AccessToken> {
-        return .init(
-            baseURL: .oauth,
-            path: "/oauth/access_token",
+    public static func postOAuthAccessToken(oauthVerifier: String) -> TwitterEndpoint<AccessToken> {
+        .init(
+            baseURL: .oauth1,
+            path: "/access_token",
             method: .post,
             headerFields: [
                 "Content-Type": "application/x-www-form-urlencoded"

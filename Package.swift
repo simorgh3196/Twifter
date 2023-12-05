@@ -1,19 +1,23 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.9
 
 import PackageDescription
 
 let package = Package(
     name: "Twifter",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v13)],
     products: [
-        .library(name: "Twifter", targets: ["Twifter"])
+        .library(name: "Twifter", targets: ["Twifter"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "4.0.0")),
-        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "9.2.1")),
+        .package(url: "https://github.com/Quick/Quick", from: "7.3.0"),
+        .package(url: "https://github.com/Quick/Nimble", from: "13.0.0"),
     ],
     targets: [
-        .target(name: "Twifter", dependencies: []),
-        .testTarget(name: "TwifterTests", dependencies: ["Twifter", "Quick", "Nimble"])
+        .target(name: "Twifter"),
+        .testTarget(name: "TwifterTests", dependencies: [
+            "Twifter",
+            .product(name: "Quick", package: "Quick"),
+            .product(name: "Nimble", package: "Nimble"),
+        ]),
     ]
 )

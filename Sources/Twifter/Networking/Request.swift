@@ -28,7 +28,7 @@ public protocol Request {
 
     var queryParameters: [String: String]? { get }
 
-    var bodyParameters: [String: String]? { get }
+    var bodyParameters: [String: Any]? { get }
 
     /// The cache policy for the request.
     var cachePolicy: URLRequest.CachePolicy { get }
@@ -39,11 +39,7 @@ public protocol Request {
     var acceptableStatusCodes: Range<Int> { get }
 
     /// Creates a URLRequest with the properties.
-    func buildURLRequest() -> URLRequest
-
-    func decodeResponse(data: Data,
-                        urlResponse: HTTPURLResponse,
-                        completionHandler: @escaping ((Response) -> Void)) throws
+    func buildURLRequest() throws -> URLRequest
 }
 
 public extension Request {
@@ -54,7 +50,7 @@ public extension Request {
 
     var queryParameters: [String: String]? { nil }
 
-    var bodyParameters: [String: String]? { nil }
+    var bodyParameters: [String: Any]? { nil }
 
     var cachePolicy: URLRequest.CachePolicy { .useProtocolCachePolicy }
 
@@ -62,7 +58,7 @@ public extension Request {
 
     var acceptableStatusCodes: Range<Int> { 200..<400 }
 
-    func buildURLRequest() -> URLRequest {
+    func buildURLRequest() throws -> URLRequest {
         var components = URLComponents(url: requestURL, resolvingAgainstBaseURL: false)!
         components.queryItems = queryParameters?.map { URLQueryItem(name: $0.key, value: $0.value) }
         let url = components.url!
@@ -70,11 +66,11 @@ public extension Request {
         var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: timeoutInterval)
         request.httpMethod = method.value
         request.allHTTPHeaderFields = headerFields
-        request.httpBody = bodyParameters?
-            .filter { !$0.key.contains("oauth_callback") }
-            .map { $0.key.urlEncoded + "=" + "\($0.value)".urlEncoded }
-            .joined(separator: "&")
-            .data(using: .utf8)
+
+        if let bodyParameters {
+            let _parameters = bodyParameters.filter { !$0.key.contains("oauth_callback") }
+            request.httpBody = try JSONSerialization.data(withJSONObject: _parameters)
+        }
 
         return request
     }

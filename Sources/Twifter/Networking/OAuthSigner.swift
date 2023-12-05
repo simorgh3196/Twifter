@@ -8,7 +8,14 @@
 
 import Foundation
 
-public struct OAuthSigner {
+public protocol OAuthSigning {
+    var credential: Credential { get }
+    var accessToken: AccessToken? { get }
+    func sign<R: Request>(to request: R) throws -> URLRequest
+    func updateAccessToken(_ accessToken: AccessToken?)
+}
+
+public class OAuth1Signer: OAuthSigning {
 
     public let credential: Credential
     public var accessToken: AccessToken?
@@ -37,8 +44,8 @@ public struct OAuthSigner {
         self.nonceGenerator = nonceGenerator
     }
 
-    public func sign<R: Request>(to request: R) -> URLRequest {
-        var urlRequest = request.buildURLRequest()
+    public func sign<R: Request>(to request: R) throws -> URLRequest {
+        var urlRequest = try request.buildURLRequest()
 
         var parameters = makeParameters(for: request)
         parameters["oauth_signature"] = makeSignature(for: request, parameters: parameters)
@@ -53,9 +60,13 @@ public struct OAuthSigner {
 
         return urlRequest
     }
+
+    public func updateAccessToken(_ accessToken: AccessToken?) {
+        self.accessToken = accessToken
+    }
 }
 
-extension OAuthSigner {
+extension OAuth1Signer {
 
     func makeParameters<R: Request>(for request: R) -> [String: String] {
         let bodyParams = request.bodyParameters?.mapValues { "\($0)" } ?? [:]

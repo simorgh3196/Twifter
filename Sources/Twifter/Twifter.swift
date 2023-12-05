@@ -8,9 +8,13 @@
 
 import UIKit
 
-open class Twifter {
+@available(*, deprecated, renamed: "TwitterClient", message: "Use TwitterClient instead")
+public typealias Twifter = TwitterClient
+
+public class TwitterClient {
     public let api: API
-    public let loginManager: LoginManager
+    public let callbackURL: URL
+    public var loginManager: LoginManager?
 
     public var credential: Credential { api.oauthSigner.credential }
     public var accessToken: AccessToken? { api.oauthSigner.accessToken }
@@ -20,28 +24,37 @@ open class Twifter {
                             accessToken: AccessToken? = nil,
                             session: URLSession = .shared) {
         let credential = Credential(consumerKey: consumerKey, consumerSecret: consumerSecret)
-        let oauthSigner = OAuthSigner(credential: credential, accessToken: accessToken)
-        let api = API(session: session, oauthSigner: oauthSigner)
+        let oauthSigner = OAuth1Signer(credential: credential, accessToken: accessToken)
+        let api = API(oauthSigner: oauthSigner, session: session)
         let callbackURL = URL(string: "twitterkit-\(credential.consumerKey)://")!
-        let loginManager = LoginManager(api: api, callbackURL: callbackURL)
-        self.init(api: api, loginManager: loginManager)
+        self.init(api: api, callbackURL: callbackURL)
     }
 
-    public init(api: API, loginManager: LoginManager) {
+    init(api: API, callbackURL: URL) {
         self.api = api
-        self.loginManager = loginManager
+        self.callbackURL = callbackURL
     }
 
-    open func handleOpen(_ url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
-        return loginManager.handleOpen(url, options: options)
-    }
+    // MARK: - Login
 
-    open func login(method: LoginMethod, completionHandler: @escaping (Result<AccessToken, TwifterError>) -> Void) {
-        switch method {
-        case .twitterApp:
-            loginManager.loginWithTwitterApp(completionHandler: completionHandler)
-        case .authenticationSession:
-            loginManager.loginWithAuthenticationSession(completionHandler: completionHandler)
+    @MainActor
+    public func handleOpen(_ url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
+        if loginManager == nil {
+            loginManager = LoginManager(api: api, callbackURL: callbackURL)
         }
+        return loginManager!.handleOpen(url, options: options)
+    }
+
+    @MainActor
+    public func login() async throws -> AccessToken {
+        if loginManager == nil {
+            loginManager = LoginManager(api: api, callbackURL: callbackURL)
+        }
+        return try await loginManager!.loginWithAuthenticationSession()
+    }
+
+    // MARK: - Tweets
+
+    public func createTweet() async throws {
     }
 }

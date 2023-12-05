@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Request {
+public struct TwitterEndpoint<Response>: Request {
     public var baseURL: URL
 
     public var path: String
@@ -19,9 +19,7 @@ public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Re
 
     public var queryParameters: [String: String]? = nil
 
-    public var bodyParameters: [String: String]? = nil
-
-    public var decoder: Decoder = .default
+    public var bodyParameters: [String: Any]? = nil
 
     public init(
         baseURL: TwitterBaseURL,
@@ -29,8 +27,7 @@ public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Re
         method: HTTPMethod,
         headerFields: [String: String]? = nil,
         queryParameters: [String: String]? = nil,
-        bodyParameters: [String: String]? = nil,
-        decoder: Decoder = .default
+        bodyParameters: [String: Any]? = nil
     ) {
         self.baseURL = baseURL.url
         self.path = path
@@ -38,25 +35,16 @@ public struct TwitterEndpoint<Response: Decodable, Decoder: ResponseDecoder>: Re
         self.headerFields = headerFields
         self.queryParameters = queryParameters
         self.bodyParameters = bodyParameters
-        self.decoder = decoder
-    }
-
-    public func decodeResponse(data: Data,
-                               urlResponse: HTTPURLResponse,
-                               completionHandler: @escaping ((Response) -> Void)) throws {
-        guard acceptableStatusCodes.contains(urlResponse.statusCode) else {
-            throw try decoder.decode(as: TwitterAPIError.self, from: data, urlResponse: urlResponse)
-        }
-
-        let response = try decoder.decode(as: Response.self, from: data, urlResponse: urlResponse)
-        completionHandler(response)
     }
 }
 
 extension API {
     @discardableResult
-    open func call<Response, Decoder>(_ endpoint: TwitterEndpoint<Response, Decoder>,
-                                      completionHandler: @escaping CompletionHandler<Response>) -> CancellableTask {
-        return send(endpoint, completionHandler: completionHandler)
+    public func call<Response: Decodable>(_ endpoint: TwitterEndpoint<Response>) async throws -> Response {
+        try await send(endpoint)
+    }
+
+    public func call(_ endpoint: TwitterEndpoint<Void>) async throws {
+        try await send(endpoint)
     }
 }

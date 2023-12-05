@@ -10,12 +10,8 @@ import AuthenticationServices
 import UIKit
 import SafariServices
 
-public enum LoginMethod {
-    case twitterApp
-    case authenticationSession
-}
-
-open class LoginManager: NSObject {
+@MainActor
+public class LoginManager: NSObject {
 
     public let api: API
     public let callbackURL: URL
@@ -24,7 +20,7 @@ open class LoginManager: NSObject {
 
     public private(set) var accessToken: AccessToken? {
         get { api.oauthSigner.accessToken }
-        set { api.oauthSigner.accessToken = newValue }
+        set { api.oauthSigner.updateAccessToken(newValue) }
     }
 
     var application: UIApplication = .shared
@@ -32,7 +28,7 @@ open class LoginManager: NSObject {
 
     private var cancelObserver: NSObjectProtocol?
     private var openURLHandler: ((URL, [UIApplication.OpenURLOptionsKey: Any]) -> Void)?
-    private var authenticationSession: Any?
+    private var authenticationSession: ASWebAuthenticationSession?
 
     public init(api: API, callbackURL: URL) {
         self.api = api
@@ -40,132 +36,66 @@ open class LoginManager: NSObject {
     }
 
     open func handleOpen(_ url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
-        guard url.scheme == callbackURL.scheme, let openURLHandler = openURLHandler else { return false }
+        guard url.scheme == callbackURL.scheme, let openURLHandler else { return false }
         openURLHandler(url, options)
         return true
     }
 
-    open func loginWithTwitterApp(completionHandler: @escaping ((Result<AccessToken, TwifterError>) -> Void)) {
-        let twitterAppURLScheme = URL(string:
-            "twitterauth://authorize"
-                + "?consumer_key=\(credential.consumerKey)"
-                + "&consumer_secret=\(credential.consumerSecret)"
-                + "&oauth_callback=twitterkit-\(credential.consumerKey)"
-            )!
+    open func loginWithAuthenticationSession() async throws -> AccessToken {
+        let requestToken = try await api.call(.postOAuthRequestToken(oauthCallbackURL: callbackURL))
+        try Task.checkCancellation()
 
-        guard application.canOpenURL(twitterAppURLScheme) else {
-            completionHandler(.failure(.loginError(reason: .doNotHaveTwitterApp)))
-            return
+        api.oauthSigner.updateAccessToken(requestToken)
+
+        let verifierURL = try await openAuthenticationSession(oauthToken: requestToken.oauthToken)
+        try Task.checkCancellation()
+
+        guard let verifier = parseCallbackURL(verifierURL) else {
+            throw TwifterError.loginError(reason: .invalidCallbackURL)
         }
 
-        application.open(twitterAppURLScheme) { [weak self] _ in
-            self?.openURLHandler = { url, options in
-                defer { self?.openURLHandler = nil }
-                self?.cancelObserver = nil
+        let verifiedToken = try await api.call(.postOAuthAccessToken(oauthVerifier: verifier))
+        api.oauthSigner.updateAccessToken(verifiedToken)
 
-                guard let accessToken = self?.parseCallbackURLFromTwitterApp(url) else {
-                    completionHandler(.failure(.loginError(reason: .invalidCallbackURL)))
-                    return
-                }
-
-                self?.accessToken =  accessToken
-                completionHandler(.success(accessToken))
-            }
-
-            self?.cancelObserver = self?.notificationCenter.addObserver(
-                forName: UIApplication.willEnterForegroundNotification,
-                object: nil,
-                queue: .main,
-                using: { _ in
-                    if self?.openURLHandler != nil {
-                        self?.openURLHandler = nil
-                        completionHandler(.failure(.loginError(reason: .cancelled)))
-                    }
-                    self?.cancelObserver = nil
-                }
-            )
-        }
+        return verifiedToken
     }
 
-    open func loginWithAuthenticationSession(
-        completionHandler: @escaping ((Result<AccessToken, TwifterError>) -> Void)
-    ) {
-        api.call(.postOAuthRequestToken(oauthCallbackURL: callbackURL)) { [weak self] result in
-            guard let self = self else { return }
+    open func openAuthenticationSession(oauthToken: String) async throws -> URL {
+        return try await withTaskCancellationHandler {
+            try await withCheckedThrowingContinuation { @MainActor continuation in
+                let authURL = URL(string: "https://api.twitter.com/oauth/authenticate?oauth_token=\(oauthToken)")!
 
-            switch result {
-            case .success(let oauthToken):
-                let requestToken = AccessToken(oauthToken: oauthToken.oauthToken,
-                                               oauthTokenSecret: oauthToken.oauthTokenSecret)
-                self.api.oauthSigner.accessToken = requestToken
-                self.openAuthenticationSession(oauthToken: requestToken.oauthToken) { [weak self] url, error in
-                    if let error = error {
-                        completionHandler(.failure(.loginError(reason: .catchError(error))))
-                        return
-                    }
-
-                    guard let url = url else {
-                        completionHandler(.failure(.loginError(reason: .cannotGetCallbackURL)))
-                        return
-                    }
-
-                    guard let verifier = self?.parseCallbackURL(url) else {
-                        completionHandler(.failure(.loginError(reason: .invalidCallbackURL)))
-                        return
-                    }
-
-                    self?.api.call(.postOAuthAccessToken(oauthVerifier: verifier)) { [weak self] result in
-                        switch result {
-                        case .success(let accessToken):
-                            self?.accessToken = accessToken
-                            completionHandler(.success(accessToken))
-                        case .failure(let error):
-                            completionHandler(.failure(.loginError(reason: .catchError(error))))
+                self.authenticationSession = ASWebAuthenticationSession(
+                    url: authURL,
+                    callbackURLScheme: callbackURL.scheme,
+                    completionHandler: { url, error in
+                        if let error {
+                            continuation.resume(throwing: TwifterError.loginError(reason: .catchError(error)))
+                            return
                         }
+
+                        guard let url else {
+                            continuation.resume(throwing: TwifterError.loginError(reason: .cannotGetCallbackURL))
+                            return
+                        }
+
+                        continuation.resume(returning: url)
                     }
-                }
-            case .failure(let error):
-                completionHandler(.failure(.loginError(reason: .catchError(error))))
+                )
+
+                self.authenticationSession!.presentationContextProvider = self
+                self.authenticationSession!.start()
             }
+        } onCancel: { [authenticationSession] in
+            authenticationSession?.cancel()
         }
     }
 
-    open func openAuthenticationSession(oauthToken: String, completionHandler: @escaping ((URL?, Error?) -> Void)) {
-        let authURL = URL(string: "https://api.twitter.com/oauth/authenticate?oauth_token=\(oauthToken)")!
-
-        if #available(iOS 12.0, *) {
-            let authenticationSession = ASWebAuthenticationSession(url: authURL,
-                                                                   callbackURLScheme: self.callbackURL.scheme,
-                                                                   completionHandler: completionHandler)
-            if #available(iOS 13.0, *) {
-                authenticationSession.presentationContextProvider = self
-            }
-            authenticationSession.start()
-            self.authenticationSession = authenticationSession
-        } else if #available(iOS 11.0, *) {
-            let authenticationSession = SFAuthenticationSession(url: authURL,
-                                                                callbackURLScheme: self.callbackURL.scheme,
-                                                                completionHandler: completionHandler)
-            authenticationSession.start()
-            self.authenticationSession = authenticationSession
-        }
-    }
-
-    public func parseCallbackURLFromTwitterApp(_ url: URL) -> AccessToken? {
+    private func parseCallbackURL(_ url: URL) -> String? {
         let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         guard let queryItems = components?.queryItems,
-            let oauthToken = queryItems.first(where: { $0.name == "oauth_token" }).flatMap({ $0.value }),
-            let oauthTokenSecret = queryItems.first(where: { $0.name == "oauth_token_secret" }).flatMap({ $0.value })
-            else { return nil }
-
-        return AccessToken(oauthToken: oauthToken, oauthTokenSecret: oauthTokenSecret)
-    }
-
-    public func parseCallbackURL(_ url: URL) -> String? {
-        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        guard let queryItems = components?.queryItems,
-            let oauthVerifier = queryItems.first(where: { $0.name == "oauth_verifier" }).flatMap({ $0.value })
-            else { return nil }
+              let oauthVerifier = queryItems.first(where: { $0.name == "oauth_verifier" }).flatMap(\.value)
+        else { return nil }
 
         return oauthVerifier
     }
@@ -175,6 +105,6 @@ open class LoginManager: NSObject {
 extension LoginManager: ASWebAuthenticationPresentationContextProviding {
 
     open func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        return application.keyWindow!
+        application.windows.first(where: \.isKeyWindow)!
     }
 }
